@@ -29,8 +29,6 @@ SECRET_KEY = config('SECRET_KEY')
 
 INSTALLED_APPS = [
     'home',
-    'artists',
-    'wlias_collections',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
