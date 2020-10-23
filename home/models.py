@@ -19,47 +19,6 @@ class HomePage(Page):
     template = 'home/landing.html'
 
     max_count = 1
-
-    collection_name = models.TextField(null=True)
-
-    img1 = models.ForeignKey(
-        "wagtailimages.Image",
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=False,
-        related_name="+",
-    )
-    img2 = models.ForeignKey(
-        "wagtailimages.Image",
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=False,
-        related_name="+",
-    )
-    img3 = models.ForeignKey(
-        "wagtailimages.Image",
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=False,
-        related_name="+",
-    )
-
-    about = models.CharField(max_length=1000, blank=False, null=True)
-
-    content_panels = Page.content_panels + [
-
-        MultiFieldPanel(
-            [
-                FieldPanel("collection_name"),
-                ImageChooserPanel("img1"),
-                ImageChooserPanel("img2"),
-                ImageChooserPanel("img3"),
-            ],
-            heading="Frame 1"
-        ),
-
-            FieldPanel('about'),
-    ]
         
 
         #sets slug to home
