@@ -2,28 +2,21 @@
     font-style: Roboto;
 }
 
-
-/*.wrapper{
-    display:grid;
-    grid-template-rows: 50% 50%;
-    
-    grid-column-gap:1em;
-    grid-row-gap:1em;
-    
-    grid-gap:1em;
-  }*/
-
-
-/*.wrapper > div{
-    padding:1em;
-  }*/
-
 nav {
-    margin: 44px 5.5% 164px;
+    margin: 0 5.5% 0;
+}
+
+.nav1 {
+    display: inline;
+    /* padding-top: 5%; */
+}
+
+.nav2 {
+    display: none;
 }
 
 .navlink {
-    margin: 8px 5.4% 44px 0;
+    margin: 0px 5.4% 0px 0;
     width: 30px;
     padding-left: none !important;
     font-style: Roboto;
@@ -59,28 +52,34 @@ nav {
 /* logo */
 
 .logo-container {
-    position: relative;
-    z-index: 1;
     width: 100%;
-    text-align: center;
+    /* text-align: center; */
+    /* align-items: center; */
+    padding: 0 auto;
+    background-color: #001DB8;
+    /* overflow: hidden; */
 }
 
 .logo-container>h1 {
-    position: absolute;
-    margin: -170px auto 0 auto;
+    position: relative;
+    margin: 0 auto;
     align-content: center;
+    font-size: 190%;
     z-index: -1;
+    background-color: yellow;
 }
 
 .logo {
+    position: relative;
     display: flex;
     z-index: 1;
     flex-direction: column;
-    width: 100%;
+    width: 40%;
     height: auto;
-    margin: 0 auto 17px auto;
+    margin: 0 auto;
     text-align: center;
-    background-color: white;
+    /* background-color: white; */
+    background-color: blueviolet;
 }
 
 .logo:active {
@@ -164,15 +163,6 @@ nav {
     width: 60%;
     color: white;
 }
-
-
-/*.about>h1 {
-    font-family: Raleway;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 50px;
-    line-height: 59px;
-} old header now replaced by*/
 
 .about>img {
     width: 310px;
@@ -271,10 +261,8 @@ nav {
 
 .caption {
     margin: 140px 0 auto;
-    width: 50%;
-    height: 500px;
     color: black;
-    transform: translate(80px, 0);
+    transform: translate(50px, 0);
 }
 
 .caption>p {
@@ -351,9 +339,6 @@ nav {
 .artist-frame2 {
     width: 100%;
     height: 500px;
-    margin-top: 150px;
-    margin-bottom: 150px;
-    /* background-color: #001DB8; */
 }
 
 .artist-frame2>a {
@@ -373,20 +358,18 @@ nav {
     display: flex;
     float: right;
     flex-direction: row;
-    width: 570px;
+    width: 800px;
     height: 500px;
-    margin: 100px 0 0% 0%;
+    margin: 0% -400px 0% 0%;
+    padding-top: 60px;
     color: #001DB8;
     overflow: visible;
 }
 
 .caption2 {
-    margin: -150px 0px 0 0;
-    width: 58%;
-    height: 500px;
-    transform: translate(-145%, 0%);
+    margin: 0 0 0 0;
+    transform: translate(-140%, -220%);
     color: black;
-    /* background-color: #001DB8; */
 }
 
 .caption2>p {
@@ -402,7 +385,7 @@ nav {
     width: 19.6%;
     height: 27.6%;
     /* padding: 100px 10% auto 2px; */
-    margin: 21% 0% 0% 0%;
+    margin: 85% 10% 15% 70%;
 }
 
 
@@ -412,6 +395,31 @@ nav {
 /* ===/tablet-4k responsiveness=== */
 
 @media only screen and (max-width: 767px) {
+    nav {
+        /*margin: 44px 5.5% 164px;*/
+        margin: 0 0 0;
+        padding-top: 5%;
+    }
+    .nav1 {
+        display: none;
+    }
+    .nav2 {
+        display: flex;
+        padding-top: 20px;
+        padding-bottom: 20px
+    }
+    .navlink {
+        margin: 4% auto 4% auto;
+        width: 30px;
+        padding-left: none !important;
+        font-style: Roboto;
+        font-weight: normal;
+        line-height: 16px;
+        color: black;
+        padding-bottom: 10px;
+        border-bottom: 4.5px solid white;
+        ;
+    }
     .logo-container {
         position: relative;
         z-index: 1;
@@ -433,22 +441,6 @@ nav {
         padding-top: 35px;
         text-align: center;
     }
-    .feature-imgs {
-        display: flex;
-        flex-direction: column;
-    }
-    .feature>h1 {
-        margin-bottom: 65px;
-        font-style: Roboto;
-        font-weight: normal;
-        font-size: 20px;
-        line-height: 27px;
-        color: #001DB8;
-    }
-    .feature-imgs>img {
-        margin: 0% auto;
-        width: 60%;
-    }
     .logo {
         display: flex;
         z-index: 1;
@@ -458,6 +450,13 @@ nav {
         margin: 0 auto 17px auto;
         text-align: center;
         background-color: white;
+    }
+    .logo-container>h1 {
+        position: absolute;
+        top: 155%;
+        margin: 0 auto 0 auto;
+        align-content: center;
+        z-index: -1;
     }
     .logo.img {
         margin: 0 auto 17px auto;
@@ -472,6 +471,15 @@ nav {
         padding-top: 35px;
         text-align: center;
     }
+    .feature-imgs {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10%;
+    }
+    .feature-imgs>img {
+        margin: 5% auto;
+        width: 60%;
+    }
     .feature>h1 {
         margin-bottom: 65px;
         font-style: Roboto;
@@ -480,12 +488,15 @@ nav {
         line-height: 27px;
         color: #001DB8;
     }
+    #lift {
+        transform: translate(0, 0);
+    }
     /* /frame1 */
     /* frame2 */
     .frame2 {
         /* position: relative;
         z-index: -1; */
-        width: 150%;
+        width: 100%;
         height: auto;
         padding-top: 10%;
         text-align: center;
@@ -501,19 +512,24 @@ nav {
         width: 60%;
         color: white;
     }
+    .about>img {
+        width: 170.5px;
+        height: 17.6px;
+        margin: 50px auto;
+    }
     .about>p {
         margin-top: 3%;
         text-align: left;
         /* font-family: Montserrat; */
         font-style: normal;
         font-weight: normal;
-        font-size: 15px;
-        line-height: 40px;
+        font-size: 12px;
+        line-height: 30px;
     }
     .social {
         display: flex;
         flex-direction: row;
-        margin: 0 0 0 80%;
+        margin: 0 0 0 70%;
         width: 25px;
         font-size: 20px;
     }
@@ -521,21 +537,198 @@ nav {
         margin: 15px 5px;
         color: white;
     }
-    /* ===artists=== */
-    /* artist-frame1 */
+    .artist-frame1 {
+        width: 100%;
+        height: 500px;
+    }
+    .artist-frame1>a {
+        display: flex;
+        flex-direction: row;
+        float: left;
+        width: 800px;
+        height: 500px;
+        margin: 0 0 0 10%;
+        padding-top: 60px;
+        text-decoration: none;
+    }
+    .artist-imgs {
+        width: 19.6%;
+        height: 27.6%;
+        /* padding: 100px 10% auto 2px; */
+        margin: auto 150px auto 193px;
+    }
+    #sun {
+        position: absolute;
+        height: 276px;
+        width: 196px;
+        border-radius: 0px;
+    }
+    #moon {
+        position: absolute;
+        height: 137px;
+        width: 132px;
+        transform: translate(-110px, -100px);
+        border-radius: 0px;
+    }
+    #mars {
+        position: absolute;
+        height: 47px;
+        width: 45px;
+        transform: translate(210px, -60px);
+        border-radius: 0px;
+    }
+    #jupiter {
+        position: absolute;
+        height: 70px;
+        width: 67px;
+        transform: translate(240px, 110px);
+        border-radius: 0px;
+    }
+    .caption {
+        margin: 140px 0 auto;
+        color: black;
+        transform: translate(50px, 0);
+    }
+    .caption>p {
+        padding-top: 10px;
+        color: black;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .modal-content {
+        display: flex;
+        flex-direction: row;
+        height: 651px;
+        margin: 135px auto auto;
+        padding: 72px 79px 0;
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        height: 461px;
+        width: 100%;
+        margin: .5rem 5% auto 0;
+        overflow: hidden;
+    }
+    .form>h4 {
+        height: 0;
+    }
+    #product>img {
+        width: 300px;
+        height: 575px;
+    }
+    .details {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 461px;
+        margin: 0 0 0 0;
+        padding-top: 30px;
+    }
+    .details>h2 {
+        transform: translate(330px, -600px);
+    }
+    .details>p {
+        height: 80%;
+        transform: translate(330px, -600px);
+        margin: 0 60% 0 0;
+    }
+    #thumb-container {
+        margin: 0 -10px 0 0;
+        transform: translate(330px, -100px);
+    }
+    #thumb {
+        width: 50px;
+        height: 50px;
+    }
+    /* /artist-frame1 */
     /* artist-frame2 */
     .artist-frame2 {
         width: 100%;
         height: 500px;
-        transform: translate(120%, 0);
+    }
+    .artist-frame2>a {
+        display: flex;
+        float: right;
+        flex-direction: row;
+        width: 100%;
+        height: 500px;
+        margin: 0 0 0 0;
+        color: black;
+        overflow: hidden;
+        text-decoration: none;
+    }
+    .artist-frame2>.container2 {
+        position: relative;
+        display: flex;
+        float: right;
+        flex-direction: row;
+        width: 800px;
+        height: 500px;
+        margin: 0% -400px 0% 0%;
+        padding-top: 60px;
+        color: #001DB8;
+        overflow: visible;
+    }
+    .caption2 {
+        margin: 0 0 0 0;
+        transform: translate(-140%, -220%);
+        color: black;
+    }
+    .caption2>p {
+        padding-top: 10px;
+        color: black;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .artist-imgs2 {
+        width: 19.6%;
+        height: 27.6%;
+        /* padding: 100px 10% auto 2px; */
+        margin: 85% 10% 15% 70%;
     }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1023px) {
     .logo-container>h1 {
         position: absolute;
         margin: -170px 38% 0 38%;
         text-align: center;
+        z-index: -1;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .logo-container>h1 {
+        position: absolute;
+        /* margin: -15% 38% 0 38%; */
+        text-align: center;
+        font-size: 150%;
+        z-index: -1;
+    }
+}
+
+@media only screen and (min-width: 1441px) {
+    .logo-container>h1 {
+        position: absolute;
+        /* margin: -20% 36% 0 36%; */
+        text-align: center;
+        font-size: 250%;
+        z-index: -1;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    .logo-container>h1 {
+        position: absolute;
+        /* margin: -18% 38% 0 38%; */
+        text-align: center;
+        font-size: 450%;
         z-index: -1;
     }
 }
