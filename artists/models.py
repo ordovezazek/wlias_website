@@ -156,6 +156,10 @@ class StoreAreaOrderable(Orderable):
 class Design(models.Model):
     design_name = models.CharField(max_length=100)
     story = models.CharField(max_length=1000)
+    order_link = models.CharField(
+        max_length=500,
+        blank=True
+    )
     display = models.ForeignKey(
         "wagtailimages.Image",
         on_delete=models.SET_NULL,
@@ -169,8 +173,14 @@ class Design(models.Model):
         FieldPanel("design_name"),
         FieldPanel("story"),
         ImageChooserPanel("display"),
+        FieldPanel('order_link'),
     ]
 
+    @property
+    def link(self)->str:
+        if self.order_link:
+            return self.order_link
+        return '#'
 
     def __str__(self):
         return self.design_name

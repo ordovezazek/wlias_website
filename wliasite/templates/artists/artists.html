@@ -14,7 +14,16 @@
 {% block content %}
 
     <div class="head-container">
-
+        <nav class="nav1">
+            <a class="navlink" href="{% slugurl 'home' %}" id="navlink1">home</a>
+            <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2" style="border-color: #001DB8;">artists</a>
+            <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3">collections</a>
+        </nav>
+        <nav class="nav2 flex-column">
+            <a class="navlink" href="{% slugurl 'home' %}" id="navlink1">home</a>
+            <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2" style="border-color: #001DB8;">artists</a>
+            <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3">collections</a>
+        </nav>
     </div>
 
   {% comment %} ========================================================================================================================================== {% endcomment %}
@@ -43,6 +52,10 @@
         <div class="artist-frame2">
             <div class="container2">
                 <a href="" data-toggle="modal" data-target="#modal{{ forloop.counter }}" style="text-decoration: none;">
+                    <div class="caption2">
+                        <h2>{{ artist.artistDeets.artist_name }}</h2>
+                        <p>{{ artist.artistDeets.caption }}</p>
+                    </div>
                     <div class="artist-imgs2">
                         {% image artist.artistDeets.profile max-500x500 as profile %}
                         <img src="{{ profile.url }}" alt="" id="sun">
@@ -53,10 +66,7 @@
                         {% image artist.artistDeets.jupiter max-500x500 as jupiter %}
                         <img src="{{ jupiter.url}}" alt="" id="jupiter">
                     </div>
-                    <div class="caption2">
-                        <h2>{{ artist.artistDeets.artist_name }}</h2>
-                        <p>{{ artist.artistDeets.caption }}</p>
-                    </div>
+                    
                 </a>
             </div>
         </div>
@@ -70,7 +80,7 @@
                         
                         <span id="{{artist}}{{ forloop.counter }}"></span>
                         {% image design.designDeets.display max-500x500 as display %}
-                        <a href="" id="product"><img src="{{ display.url }}" alt=""></a>
+                        <a href="reddit" id="product"><img src="{{ display.url }}" alt=""></a>
 
                         <div class="details">
                             <h2>{{ design.designDeets.design_name }}</h2><br>
