@@ -17,13 +17,16 @@
         <nav class="nav1">
             <a class="navlink" href="{% slugurl 'home' %}" id="navlink1">home</a>
             <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2" style="border-color: #001DB8;">artists</a>
-            <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3">collections</a>
+            {% comment %} <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3">collections</a> {% endcomment %}
+            <a class="navlink" href="{% slugurl 'home' %}" id="navlink3">collections</a>
         </nav>
         <nav class="nav2 flex-column">
-            <a class="navlink" href="{% slugurl 'home' %}" id="navlink1">home</a>
-            <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2" style="border-color: #001DB8;">artists</a>
-            <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3">collections</a>
+                <a class="navlink" href="{% slugurl 'home' %}" id="navlink1">home</a>
+                <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2" style="border-color: #001DB8;">artists</a>
+                {% comment %} <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3">collections</a> {% endcomment %}
+                <a class="navlink" href="{% slugurl 'home' %}" id="navlink3">collections</a>
         </nav>
+
     </div>
 
   {% comment %} ========================================================================================================================================== {% endcomment %}
@@ -66,13 +69,13 @@
                         {% image artist.artistDeets.jupiter max-500x500 as jupiter %}
                         <img src="{{ jupiter.url}}" alt="" id="jupiter">
                     </div>
-                    
                 </a>
             </div>
         </div>
      {% endif %}
 
     <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myHugeModalLabel" aria-hidden="true" id="modal{{ forloop.counter }}">
+        {% comment %} <a href='#'> <i class="fa fa-times" aria-hidden="true"></i> </a> {% endcomment %}
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div data-spy="artist{{ forloop.counter }}" data-target="options" data-offset="0" class="form">
@@ -80,10 +83,14 @@
                         
                         <span id="{{artist}}{{ forloop.counter }}"></span>
                         {% image design.designDeets.display max-500x500 as display %}
-                        <a href="reddit" id="product"><img src="{{ display.url }}" alt=""></a>
-
+                        <a linktype="page" rel="external" href="http://{{ design.designDeets.link }}" id="product">
+                            <div id="instruct"><h3>TOUCH TO ORDER</h3></div>
+                            <img src="{{ display.url }}" alt="">
+                            <div class="order-mob">ORDER</div>
+                        </a>
                         <div class="details">
                             <h2>{{ design.designDeets.design_name }}</h2><br>
+                            <h3>*hover over image to order*</h3>
                             <p>{{ design.designDeets.story }}</p>
                         </div>
                     {% endfor %}

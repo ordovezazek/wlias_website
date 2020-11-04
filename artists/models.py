@@ -129,7 +129,6 @@ class Artist(ClusterableModel):
         ),
     ]
 
-
     def __str__(self):
         return self.artist_name
     class Meta:
@@ -177,7 +176,7 @@ class Design(models.Model):
     ]
 
     @property
-    def link(self)->str:
+    def link(self):
         if self.order_link:
             return self.order_link
         return '#'
