@@ -23,6 +23,8 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 DEBUG = config('DEBUG', cast=bool)
 
+ALLOWED_HOSTS = ['*']
+
 SECRET_KEY = config('SECRET_KEY')
 
 # Application definition
