@@ -18,6 +18,9 @@ Follow these steps to setup:
 4. cd into wliasite folder
 5. enter into terminal/cmd: pip install -r requirements.txt
 
+
+
+
 Run website on localhost:
 
 1. [terminal/cmd]: python manage.py makemigrations
