@@ -14,17 +14,31 @@
 
     <div class="head-container">
         <nav class="nav1" id="nav1">
-            <a class="navlink" href="{% slugurl 'home' %}" id="navlink1" style="border-color: #001DB8;">home</a>
+            <a class="navlink" href="{% slugurl 'home' %}" id="navlink1">home</a>
             <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2">artists</a>
+            <a class="navlink" href="{% slugurl 'shop' %}" id="navlink2" style="border-color: #001DB8;">shop</a>
             {% comment %} <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3">collections</a> {% endcomment %}
             <a class="navlink" href="{% slugurl 'home' %}" id="navlink3">collections</a>
         </nav>
         <nav class="nav2 flex-column">
-            <a class="navlink" href="{% slugurl 'home' %}" id="navlink1" style="border-color: #001DB8;">home</a>
+            <a class="navlink" href="{% slugurl 'home' %}" id="navlink1">home</a>
             <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2">artists</a>
+            <a class="navlink" href="{% slugurl 'shop' %}" id="navlink2" style="border-color: #001DB8;">shop</a>
             {% comment %} <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3">collections</a> {% endcomment %}
             <a class="navlink" href="{% slugurl 'home' %}" id="navlink3">collections</a>
         </nav>
+    </div>
+
+    <div class="heading">{{ page.collection}}</div>
+    <div class="shop-container">
+        {% for product in self.designs.all %}
+            {% image product.product.product max-1000x1000 as PImg %}
+            <a linktype="page" rel="external" href="http://{{ product.product.link }}">
+                <img src="{{ PImg.url }}" alt="" >
+                <h3 id="order">{{ product.product.design_name }}</h3>
+            </a>
+            
+        {% endfor %}
     </div>
 
 {% endblock %}

@@ -63,7 +63,7 @@ nav {
 .navlink:hover {
     color: black;
     text-decoration: none;
-    color: #001DB8;
+    color: #411CD6;
 }
 
 .head-container {
@@ -146,7 +146,7 @@ nav {
     font-weight: normal;
     font-size: 30px;
     line-height: 37px;
-    color: #001DB8;
+    color: #411CD6;
 }
 
 .feature-imgs {
@@ -438,7 +438,7 @@ nav {
     height: fit-content;
     margin: 0% 0% 0% 0%;
     padding-top: 70px;
-    color: #001DB8;
+    color: #411CD6;
     overflow: visible;
     text-align: right;
 }
@@ -487,6 +487,50 @@ nav {
 
 
 /* ======shop====== */
+
+.heading {
+    width: 90%;
+    background-color: #411CD6;
+    color: white;
+    padding: 6px 12px 6px;
+    margin: 36px auto 0;
+}
+
+.shop-container {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: auto;
+    margin: 0 auto 0;
+    /* overflow: hidden; */
+    background-color: white;
+}
+
+.shop-container>a {
+    text-align: center;
+}
+
+.shop-container>a>img {
+    position: relative;
+    z-index: 0;
+    height: auto;
+    width: 30vw;
+}
+
+.shop-container>a>img:hover {
+    opacity: 0.6;
+}
+
+#order {
+    font-size: 1.5vw;
+    position: absolute;
+    z-index: 1;
+    width: 30%;
+    /* height: auto; */
+    /* margin: auto auto; */
+    color: #411CD6;
+    text-align: center;
+}
 
 
 /* ======/shop====== */

@@ -166,12 +166,20 @@ class Design(models.Model):
         blank=False,
         related_name="+",
     )
+    product = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=False,
+        related_name="+",
+    )
 
     panels = [
 
         FieldPanel("design_name"),
         FieldPanel("story"),
         ImageChooserPanel("display"),
+        ImageChooserPanel("product"),
         FieldPanel('order_link'),
     ]
 

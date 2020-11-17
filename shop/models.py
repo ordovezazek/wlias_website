@@ -63,9 +63,9 @@ class ShopPage(Page):
         if not self.slug.startswith('shop'):
             self.slug = 'shop'
 
-    def get_context(self, request):
-        context = super(ShopPage, self).get_context(request)
-        context['products'] = self.product.all()
+    # def get_context(self, request):
+    #     context = super(ShopPage, self).get_context(request)
+    #     context['products'] = self.designs.all()
 
         return context
 

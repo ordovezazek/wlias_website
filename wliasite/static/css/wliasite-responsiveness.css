@@ -104,7 +104,8 @@ Extra Responsiveness 281
         padding-bottom: 20px
     }
     .navlink {
-        margin: 4% auto 4% auto;
+        margin: 4% auto 4%;
+        text-align: center;
     }
     .logo-container {
         align-content: center;
@@ -275,6 +276,26 @@ Extra Responsiveness 281
         height: fit-content !important;
         transform: translate(0px, 0);
     }
+    /* artist-frame2 */
+    /* ======shop====== */
+    .shop-container {
+        flex-direction: column;
+        width: 560vw0%;
+        background-color: white;
+    }
+    .shop-container>a>img {
+        width: 60vw;
+    }
+    .shop-container>a {
+        margin: 50px auto;
+        text-align: center;
+    }
+    #order {
+        font-size: 5vw;
+        width: 62%;
+        margin-top: 3%;
+    }
+    /* ======/shop====== */
 }
 
 

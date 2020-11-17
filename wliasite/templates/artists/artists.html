@@ -14,19 +14,20 @@
 {% block content %}
 
     <div class="head-container">
-        <nav class="nav1">
+        <nav class="nav1" id="nav1">
             <a class="navlink" href="{% slugurl 'home' %}" id="navlink1">home</a>
             <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2" style="border-color: #001DB8;">artists</a>
+            <a class="navlink" href="{% slugurl 'shop' %}" id="navlink2">shop</a>
             {% comment %} <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3">collections</a> {% endcomment %}
             <a class="navlink" href="{% slugurl 'home' %}" id="navlink3">collections</a>
         </nav>
         <nav class="nav2 flex-column">
-                <a class="navlink" href="{% slugurl 'home' %}" id="navlink1">home</a>
-                <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2" style="border-color: #001DB8;">artists</a>
-                {% comment %} <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3">collections</a> {% endcomment %}
-                <a class="navlink" href="{% slugurl 'home' %}" id="navlink3">collections</a>
+            <a class="navlink" href="{% slugurl 'home' %}" id="navlink1">home</a>
+            <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2" style="border-color: #001DB8;">artists</a>
+            <a class="navlink" href="{% slugurl 'shop' %}" id="navlink2">shop</a>
+            {% comment %} <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3">collections</a> {% endcomment %}
+            <a class="navlink" href="{% slugurl 'home' %}" id="navlink3">collections</a>
         </nav>
-
     </div>
 
   {% comment %} ========================================================================================================================================== {% endcomment %}
@@ -36,13 +37,13 @@
         <div class="artist-frame1">
             <a href="" data-toggle="modal" data-target="#modal{{ forloop.counter }}" style="text-decoration: none;">
                 <div class="artist-imgs">
-                    {% image artist.artistDeets.profile max-500x500 as profile %}
+                    {% image artist.artistDeets.profile max-1000x1000 as profile %}
                     <img src="{{ profile.url }}" alt="" id="sun">
-                    {% image artist.artistDeets.moon max-500x500 as moon %}
+                    {% image artist.artistDeets.moon max-1000x1000 as moon %}
                     <img src="{{ moon.url }}" alt="" id="moon">
-                    {% image artist.artistDeets.mars max-500x500 as mars %}
+                    {% image artist.artistDeets.mars max-1000x1000 as mars %}
                     <img src="{{ mars.url }}" alt="" id="mars">
-                    {% image artist.artistDeets.jupiter max-500x500 as jupiter %}
+                    {% image artist.artistDeets.jupiter max-1000x1000 as jupiter %}
                     <img src="{{ jupiter.url}}" alt="" id="jupiter">
                 </div>
                 <div class="caption">
@@ -60,13 +61,13 @@
                         <p>{{ artist.artistDeets.caption }}</p>
                     </div>
                     <div class="artist-imgs2">
-                        {% image artist.artistDeets.profile max-500x500 as profile %}
+                        {% image artist.artistDeets.profile max-1000x1000 as profile %}
                         <img src="{{ profile.url }}" alt="" id="sun">
-                        {% image artist.artistDeets.moon max-500x500 as moon %}
+                        {% image artist.artistDeets.moon max-1000x1000 as moon %}
                         <img src="{{ moon.url }}" alt="" id="moon">
-                        {% image artist.artistDeets.mars max-500x500 as mars %}
+                        {% image artist.artistDeets.mars max-1000x1000 as mars %}
                         <img src="{{ mars.url }}" alt="" id="mars">
-                        {% image artist.artistDeets.jupiter max-500x500 as jupiter %}
+                        {% image artist.artistDeets.jupiter max-1000x1000 as jupiter %}
                         <img src="{{ jupiter.url}}" alt="" id="jupiter">
                     </div>
                 </a>
@@ -82,7 +83,7 @@
                     {% for design in artist.artistDeets.designs.all %}
                         
                         <span id="{{artist}}{{ forloop.counter }}"></span>
-                        {% image design.designDeets.display max-500x500 as display %}
+                        {% image design.designDeets.display max-1000x1000 as display %}
                         <a linktype="page" rel="external" href="http://{{ design.designDeets.link }}" id="product">
                             <div id="instruct"><h3>TOUCH TO ORDER</h3></div>
                             <img src="{{ display.url }}" alt="">
@@ -99,7 +100,7 @@
                     <ul class="nav nav-pills">
                         {% for design in artist.artistDeets.designs.all %}
                             <li class="nav-item" id="thumb-container">
-                                {% image  design.designDeets.display max-500x500 as display %}
+                                {% image  design.designDeets.display max-1000x1000 as display %}
                                 <a class="nav-link" href="#{{artist}}{{ forloop.counter }}"><img src="{{ display.url }}" alt="" id="thumb"></a>
                             </li>
                         {% endfor %}
