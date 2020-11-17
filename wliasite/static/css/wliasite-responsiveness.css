@@ -1,0 +1,408 @@
+/* 
+
+[FILE MAP]
+
+Mobile Responsiveness 16
+    Small laptops and smaller 19
+    Tablets and smaller 88
+Extra Responsiveness 281
+    tablet to 1k
+    big mobile to tablet 299
+    Large mobile and smaller 334
+    Medium mobile and smaller 394 
+*/
+
+
+/* ======/mobile responsiveness====== */
+
+
+/* ===less than 992px (small laptops)=== */
+
+@media screen and (max-width: 992px) {
+    .modal-content {
+        height: 700px;
+        margin: 20% 0 0 0;
+        padding: 69px 73px 0;
+        align-content: center;
+    }
+    .form {
+        height: 100%;
+        width: 100%;
+        margin: .5rem 0 auto 0;
+    }
+    #product {
+        width: 100%;
+        padding-bottom: 80px;
+        border-bottom: 1px solid gray;
+        text-align: center;
+    }
+    #product>img {
+        width: 60%;
+        height: 100%;
+        margin: 0 20%;
+    }
+    #product>#instruct {
+        display: none;
+    }
+    #product>.order-mob {
+        background-color: #001DB8;
+        color: white;
+        height: 30px;
+        width: 100px;
+        margin: 20px 35%;
+        padding-top: 2px;
+        border-radius: 12px;
+    }
+    .details {
+        height: 100%;
+        padding-top: 10px;
+    }
+    .details>h2 {
+        transform: none;
+        font-size: 150%;
+    }
+    .details>h3 {
+        display: none;
+    }
+    .details>p {
+        height: 340px;
+        margin: -25px 0 0 0;
+        transform: none;
+        font-size: 60%;
+        line-height: 17px;
+    }
+    #thumb-container {
+        transform: none;
+        padding-top: 20px;
+    }
+    #thumb {
+        margin-bottom: 20px;
+    }
+    #options>ul {
+        width: fit-content;
+        margin: 0 auto !important;
+    }
+}
+
+
+/* ===tablets=== */
+
+@media only screen and (max-width: 769px) {
+    .head-container {
+        height: fit-content;
+    }
+    nav {
+        margin: 0 0 0;
+        padding-top: 5%;
+    }
+    .nav1 {
+        display: none;
+    }
+    .nav2 {
+        display: flex;
+        padding-top: 20px;
+        padding-bottom: 20px
+    }
+    .navlink {
+        margin: 4% auto 4% auto;
+    }
+    .logo-container {
+        align-content: center;
+    }
+    .logo {
+        width: 100%;
+    }
+    .frame1 {
+        height: auto;
+    }
+    .feature-imgs {
+        flex-direction: column;
+        margin-bottom: 10%;
+    }
+    .feature-imgs>img {
+        margin: 5% auto;
+        width: 60%;
+    }
+    .feature>h1 {
+        font-size: 20px;
+        line-height: 27px;
+    }
+    #lift {
+        transform: translate(0, 0);
+    }
+    /* /frame1 */
+    /* frame2 */
+    .frame2 {
+        height: fit-content;
+        padding-top: 30px;
+    }
+    .about {
+        margin: 0 auto;
+        width: 80%;
+    }
+    .about>img {
+        width: auto;
+        height: auto;
+    }
+    .about>p {
+        margin: 3% auto 0;
+        width: 90%;
+        line-height: 30px;
+    }
+    .social {
+        display: flex;
+        flex-direction: row;
+        margin: 50px 0 0;
+        height: fit-content;
+        padding-bottom: 30px;
+        width: 100%;
+        font-size: 50px;
+    }
+    .social>a {
+        margin: 15px 5px;
+        width: 100%;
+    }
+    /* ====== artists page ======*/
+    .artist-frame1 {
+        height: 60%;
+        margin-top: 300px;
+        padding: 0 30px 0;
+    }
+    .artist-frame1>a {
+        display: flex;
+        flex-direction: column;
+        height: 60%;
+        margin: 0 0 0 0%;
+        padding: 40px 30px 0;
+        text-align: center;
+    }
+    .artist-imgs {
+        width: inherit;
+        transform: translate(-105px, 10px);
+        margin: 0 0 0 0;
+    }
+    #sun {
+        height: 138px;
+        width: 98px;
+    }
+    #moon {
+        height: 68.5px;
+        width: 66px;
+        transform: translate(-55px, -50px);
+    }
+    #mars {
+        height: 23.5px;
+        width: 22.5px;
+        transform: translate(105px, -30px);
+    }
+    #jupiter {
+        height: 35px;
+        width: 33.5px;
+        transform: translate(120px, 110px);
+    }
+    .caption {
+        width: 100%;
+        margin: 100px 0 0;
+        margin-left: -50px;
+    }
+    .modal-content {
+        flex-direction: row;
+        height: 651px;
+        margin: 25% 0 25% 0;
+        padding: 50px 53px 0;
+        align-content: center;
+    }
+    .modal-content>a {
+        position: absolute;
+        font-size: 30px;
+        transform: translate(-30px, -30px);
+    }
+    .form {
+        height: 100%;
+        margin: .5rem 0 0 0;
+        overflow: hidden;
+    }
+    .details {
+        height: 400px;
+        padding-top: 10px;
+    }
+    .details>h2 {
+        transform: none;
+        font-size: 150%;
+    }
+    .details>p {
+        height: 400px;
+        margin: -20px 0 0 0;
+        transform: none;
+        font-size: 65%;
+        line-height: 15px;
+        padding-bottom: 50px;
+    }
+    #thumb-container {
+        transform: none;
+    }
+    /* /artist-frame1 */
+    /* artist-frame2 */
+    .artist-frame2 {
+        padding: 0;
+        width: 100%;
+        height: 60%;
+    }
+    .container2 {
+        padding-top: 0 !important;
+        text-align: center;
+        padding-bottom: 0px;
+    }
+    .container2>a {
+        float: none;
+        flex-direction: column-reverse !important;
+        margin: 0;
+        padding: auto 0 !important;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+    .artist-imgs2 {
+        width: 100% !important;
+        margin: 250px 0 100px !important;
+        height: 17%;
+        /* padding: 100px 10% auto 2px; */
+        transform: translate(-108px, 0);
+    }
+    .caption2 {
+        width: 100%;
+        margin: 0 !important;
+        height: fit-content !important;
+        transform: translate(0px, 0);
+    }
+}
+
+
+/* extra responsiveness fixes */
+
+
+/* ===tablet to 1k=== */
+
+@media (max-width:978px) and (min-width: 769px) {
+    .social {
+        display: block;
+        width: 100%;
+        float: none;
+        margin: auto auto;
+    }
+    .social>a {
+        margin-right: 50px;
+    }
+}
+
+
+/* ===big mobile to tablet=== */
+
+@media (max-width:768px) and (min-width: 500px) {
+    .artist-imgs {
+        padding-top: 20px;
+    }
+    .artist-imgs2 {
+        width: 20%;
+        height: 30%;
+        float: none;
+        padding-top: 20px;
+    }
+    #sun {
+        height: 250px;
+        width: 200px;
+        transform: translate(0px, -200px);
+    }
+    #moon {
+        height: 140px;
+        width: 140px;
+        transform: translate(-110px, -300px);
+    }
+    #mars {
+        height: 50px;
+        width: 50px;
+        transform: translate(210px, -260px);
+    }
+    #jupiter {
+        height: 70px;
+        width: 70px;
+        transform: translate(240px, -110px);
+    }
+}
+
+
+/* ===large mobile and smaller=== */
+
+@media only screen and (max-width: 500px) {
+    .details>p {
+        font-size: 60%;
+    }
+    .artist-frame1 {
+        margin: 50px 0 0;
+    }
+    .artist-imgs {
+        width: 100%;
+        height: 30px;
+        transform: translate(-50px, 0px);
+    }
+    .caption {
+        margin-top: 180px;
+        height: fit-content;
+    }
+    .artist-frame2 {
+        padding-top: 100px;
+        margin-bottom: 100px;
+    }
+    .container2>a {
+        padding: 0 60px 0 !important;
+    }
+    .caption2 {
+        margin-top: 200px;
+    }
+    .artist-imgs2 {
+        width: 100%;
+        height: 30px;
+        transform: translate(-50px, 0);
+        margin: 30px 0 200px !important;
+    }
+    #sun {
+        height: 138px;
+        width: 98px;
+    }
+    #moon {
+        height: 68.5px;
+        width: 66px;
+        transform: translate(-55px, -50px);
+    }
+    #mars {
+        height: 23.5px;
+        width: 22.5px;
+        transform: translate(105px, -30px);
+    }
+    #jupiter {
+        height: 35px;
+        width: 33.5px;
+        transform: translate(120px, 110px);
+    }
+}
+
+
+/* ===medium mobile and smaller=== */
+
+@media only screen and (max-width: 425px) {
+    .about>img {
+        width: 250px;
+        height: 25px;
+    }
+    .about>p {
+        font-size: medium;
+    }
+    #thumb {
+        width: 40px;
+        height: 40px;
+    }
+    .modal-content {
+        width: 100%;
+        height: 600px;
+    }
+}
