@@ -67,7 +67,7 @@ class ShopPage(Page):
     #     context = super(ShopPage, self).get_context(request)
     #     context['products'] = self.designs.all()
 
-        return context
+    #     return context
 
 class ShopPageOrderable(Orderable):
     
