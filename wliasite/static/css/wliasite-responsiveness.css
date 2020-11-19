@@ -287,7 +287,7 @@ Extra Responsiveness 302
     /* ======shop====== */
     .shop-container {
         flex-direction: column;
-        width: 560vw0%;
+        width: 560vw;
         background-color: white;
     }
     .shop-container>a>img {
