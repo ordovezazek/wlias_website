@@ -8,6 +8,16 @@
 
 {% block extra_css %}
 
+<style>
+    @media (max-width:1440px) and (min-width: 768px) {
+        #order-text {
+            height: 5vh;
+            top: 155% !important;
+            background-color: #001DB8 !important;
+        }
+    }
+</style>
+
 {% endblock %} 
 
 {% block content %}
@@ -33,9 +43,14 @@
     <div class="shop-container">
         {% for product in self.designs.all %}
             {% image product.product.product max-1000x1000 as PImg %}
-            <a linktype="page" rel="external" href="http://{{ product.product.link }}">
-                <img src="{{ PImg.url }}" alt="" >
-                <h3 id="order">{{ product.product.design_name }}</h3>
+            {% image product.product.display max-1000x1000 as DImg %}
+            <a linktype="page" rel="external" href="http://{{ product.product.link }}" id="order-container">
+                <img id="prod-img" src="{{ PImg.url }}" alt="">
+                <div class="overlay" style="background: url('{{ DImg.url }}');">
+                    {% comment %} <div class="order-text">ORDER NOW</div> {% endcomment %}
+                </div>
+                <div id="order"><h3>{{ product.product.design_name }}</h3></div>
+                <div id="ot-mobile">ORDER NOW</div>
             </a>
             
         {% endfor %}
