@@ -87,7 +87,7 @@ Extra Responsiveness 302
 
 /* ===tablets=== */
 
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 768px) {
     .head-container {
         height: fit-content;
     }
@@ -116,6 +116,13 @@ Extra Responsiveness 302
     .frame1 {
         height: auto;
     }
+    .feature {
+        height: 0;
+        overflow: hidden;
+    }
+    .feature-mobile {
+        height: fit-content;
+    }
     .feature-imgs {
         flex-direction: column;
         margin-bottom: 10%;
@@ -134,11 +141,11 @@ Extra Responsiveness 302
     /* /frame1 */
     /* frame2 */
     .frame2 {
-        height: fit-content;
+        height: 103vh;
         padding-top: 30px;
     }
     .about {
-        margin: 0 auto;
+        margin: -4vh auto;
         width: 80%;
     }
     .about>img {
@@ -151,16 +158,16 @@ Extra Responsiveness 302
         line-height: 30px;
     }
     .social {
-        display: flex;
-        flex-direction: row;
-        margin: 50px 0 0;
+        display: block;
+        /* flex-direction: row; */
+        margin: 0 0;
         height: fit-content;
         padding-bottom: 30px;
         width: 100%;
         font-size: 50px;
     }
     .social>a {
-        margin: 15px 5px;
+        margin: 15px 30px;
         width: 100%;
     }
     /* ====== artists page ======*/
@@ -304,7 +311,21 @@ Extra Responsiveness 302
 
 /* ===tablet to 1k=== */
 
-@media (max-width:978px) and (min-width: 769px) {
+@media (max-width:1440px) and (min-width: 768px) {
+    #feature {
+        margin-top: 10vh;
+    }
+}
+
+@media (max-width:978px) and (min-width: 768px) {
+    .logo>img {
+        width: 250px;
+    }
+    .logo-container>h2 {
+        font-size: 28px;
+        margin-bottom: -3.6vh;
+        transform: translate(0, 120px);
+    }
     .social {
         display: block;
         width: 100%;
@@ -320,6 +341,18 @@ Extra Responsiveness 302
 /* ===big mobile to tablet=== */
 
 @media (max-width:768px) and (min-width: 500px) {
+    /* ======landing====== */
+    .logo-container {
+        margin-top: 5vh;
+    }
+    .logo-container>h2 {
+        font-size: 24px;
+    }
+    #feature {
+        margin-top: 30vh;
+    }
+    /* ======/landing====== */
+    /* ======/artists====== */
     .artist-imgs {
         padding-top: 20px;
     }
@@ -351,10 +384,47 @@ Extra Responsiveness 302
     }
 }
 
+@media only screen and (max-width: 695px) {
+    .about>h1 {
+        font-size: 35px;
+    }
+    .about {
+        font-size: 15px;
+        line-height: 4vh;
+    }
+}
+
+@media only screen and (max-width: 531px) {
+    .about>h1 {
+        font-size: 30px;
+    }
+    .about {
+        /* font-size: 15px; */
+        font-size: 19px;
+        line-height: 3.5vh;
+    }
+}
+
 
 /* ===large mobile and smaller=== */
 
 @media only screen and (max-width: 500px) {
+    .logo>img {
+        width: 200px;
+    }
+    .logo-container {
+        margin-top: 5vh;
+    }
+    .logo-container>h2 {
+        font-size: 20px;
+        margin-bottom: -3.8vh;
+        transform: translate(0, 100px);
+    }
+    #feature {
+        margin-top: 25vh;
+    }
+    /* ======/landing====== */
+    /* ======/artists====== */
     .details>p {
         font-size: 60%;
     }
@@ -411,12 +481,19 @@ Extra Responsiveness 302
 /* ===medium mobile and smaller=== */
 
 @media only screen and (max-width: 425px) {
-    .about>img {
-        width: 250px;
-        height: 25px;
+    .about {
+        line-height: 2.5vh;
+        font-size: 17px;
     }
     .about>p {
-        font-size: medium;
+        font-size: 10px;
+    }
+    .about-container {
+        margin-bottom: -44px;
+    }
+    .social>a {
+        font-size: 50px;
+        /* margin-right: 85x; */
     }
     #thumb {
         width: 40px;

@@ -22,21 +22,21 @@ class HomePage(Page):
 
     collection_name = models.TextField(null=True)
 
-    img1 = models.ForeignKey(
+    section1 = models.ForeignKey(
         "wagtailimages.Image",
         on_delete=models.SET_NULL,
         null=True,
         blank=False,
         related_name="+",
     )
-    img2 = models.ForeignKey(
+    section1_mobile = models.ForeignKey(
         "wagtailimages.Image",
         on_delete=models.SET_NULL,
         null=True,
         blank=False,
         related_name="+",
     )
-    img3 = models.ForeignKey(
+    section2 = models.ForeignKey(
         "wagtailimages.Image",
         on_delete=models.SET_NULL,
         null=True,
@@ -44,21 +44,21 @@ class HomePage(Page):
         related_name="+",
     )
 
-    about = models.CharField(max_length=1000, blank=False, null=True)
+    about = RichTextField()
 
     content_panels = Page.content_panels + [
 
         MultiFieldPanel(
             [
                 FieldPanel("collection_name"),
-                ImageChooserPanel("img1"),
-                ImageChooserPanel("img2"),
-                ImageChooserPanel("img3"),
+                ImageChooserPanel("section1"),
+                ImageChooserPanel("section1_mobile"),
+                ImageChooserPanel("section2"),
+                # ImageChooserPanel("img3"),
             ],
             heading="Frame 1"
         ),
-
-            FieldPanel('about'),
+        FieldPanel('about'),
     ]
         
 

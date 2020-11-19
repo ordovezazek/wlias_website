@@ -1,5 +1,13 @@
+@font-face {
+    font-family: "WarowniaBoEx";
+    src: url("../fonts/WarowniaBdExt.eot?") format("eot"), url("../fonts/WarowniaBdExt.woff") format("woff"), url("../fonts/WarowniaBdExt.ttf") format("truetype"), url("../fonts/WarowniaBdExt.svg#WarowniaBdExt") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
-    font-style: Roboto;
+    font-family: WarowniaBoEx;
+    font-style: normal;
 }
 
 
@@ -40,7 +48,6 @@ nav {
     margin: 8px 5.4% 44px 0;
     width: 30px;
     padding-left: none !important;
-    font-style: Roboto;
     font-weight: normal;
     line-height: 16px;
     color: black;
@@ -82,49 +89,54 @@ nav {
 /* logo */
 
 .logo-container {
-    position: relative;
+    position: absolute;
     z-index: 1;
     width: 100%;
     text-align: center;
-    padding-top: 50px;
-    padding-bottom: 2%;
+    padding-top: -1vh;
+    /* padding-bottom: 2%; */
 }
 
-.logo-container>h1 {
+
+/* .logo-container>h1 {
     position: absolute;
     top: 45%;
     width: 100%;
     align-content: center;
     font-size: 190%;
     z-index: -1;
-}
+    /* visibility: hidden; 
+} */
 
 .logo {
     display: flex;
-    z-index: 1;
-    flex-direction: column;
-    width: 60%;
-    height: auto;
-    margin: 0 auto 17px auto;
-    text-align: center;
-    background-color: white;
-}
-
-.logo:active {
-    visibility: hidden;
-}
-
-.logo>img {
-    margin: 0 auto 17px auto;
-    width: 30%;
-    height: auto;
-}
-
-.soc-container {
+    position: absolute;
     width: 100%;
     z-index: 1;
-    margin: 25px auto 0;
+    flex-direction: column;
     text-align: center;
+    background: rgba(0, 0, 0, 0);
+}
+
+
+/* .logo:active {
+    visibility: hidden;
+} */
+
+.logo>img {
+    width: 300px;
+    height: auto;
+    background: rgb(0, 0, 0, 0);
+    margin: 0 auto;
+}
+
+.logo-container>h2 {
+    margin-bottom: -3.6vh;
+    transform: translate(0, 150px);
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 37px;
+    color: #411CD6;
 }
 
 
@@ -135,33 +147,56 @@ nav {
 
 .frame1 {
     width: 100%;
-    height: 50%;
-    padding-top: 35px;
+    height: fit-content;
+    /* padding-top: 35px; */
     text-align: center;
 }
 
-.feature>h1 {
-    margin-bottom: 65px;
-    font-style: Roboto;
-    font-weight: normal;
-    font-size: 30px;
-    line-height: 37px;
-    color: #411CD6;
+.feature-mobile {
+    height: 0;
+    overflow: hidden;
 }
 
-.feature-imgs {
-    display: flex;
-    flex-direction: row;
+.feature-container {
+    /* display: flex;
+    flex-direction: row; */
+    width: 100%;
+    height: auto;
+    text-align: left;
 }
 
-.feature-imgs>img {
-    margin: 0 auto;
-    width: 15%;
+.feature-collage {
+    width: 100%;
+    /* height: auto; */
+    height: fit-content;
+    background-color: #411CD6;
 }
 
-#lift {
+.feature-collage>img {
+    width: 100%;
+    height: auto;
+    background-color: aqua;
+}
+
+.fixed-feature {
+    width: 100%;
+    /* height: auto; */
+    height: fit-content;
+    background-color: #411CD6;
+    overflow: hidden;
+}
+
+.fixed-feature>img {
+    width: 104%;
+    /* width: 100%; */
+    height: auto;
+    transform: translate(-1.7vw, 0px);
+}
+
+
+/* #lift {
     transform: translate(0, -15%);
-}
+} */
 
 
 /* /frame1 */
@@ -170,36 +205,50 @@ nav {
 /* frame2 */
 
 .frame2 {
-    height: 50%;
+    height: 102vh;
     width: 100%;
-    padding-top: 5%;
+    padding: 0% 10vw;
     text-align: center;
     background-color: black;
-    margin-top: 15%;
+    margin-top: -3.8vh;
     overflow: hidden;
+    display: block;
+}
+
+.about-container {
+    position: relative;
+    height: 90%;
 }
 
 .about {
+    margin: 0 auto;
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    margin: 5% auto;
-    width: 60%;
+    height: fit-content;
+    width: 100%;
     color: white;
 }
 
-.about>img {
-    width: 310px;
-    height: 32px;
+.about>h1 {
+    width: fit-content;
+    height: fit-content;
     margin: 50px auto;
+    text-align: center;
+    font-size: 2.5rem;
+    word-spacing: 10px;
 }
 
-.about>p {
-    margin-top: 3%;
+.about {
+    /* margin-top: 3%; */
     text-align: left;
-    font-style: normal;
     font-weight: normal;
     font-size: 20px;
-    line-height: 50px;
+    line-height: 5vh;
     text-align: justify;
     text-justify: inter-word;
 }
@@ -212,6 +261,7 @@ nav {
     margin: 0 200px 0 0;
     width: 50px;
     font-size: 40px;
+    transform: translate(2vw, -5vh);
 }
 
 .social>a {
@@ -298,7 +348,6 @@ nav {
 .caption>p {
     padding-top: 10px;
     color: black;
-    font-style: normal;
     font-weight: normal;
     font-size: 12px;
     line-height: 15px;
@@ -466,7 +515,6 @@ nav {
 .caption2>p {
     padding-top: 10px;
     color: black;
-    font-style: normal;
     font-weight: normal;
     font-size: 12px;
     line-height: 15px;
