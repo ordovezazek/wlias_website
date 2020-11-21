@@ -36,6 +36,10 @@
     {% if not forloop.counter|divisibleby:2 %}
         <div class="artist-frame1">
             <a href="" data-toggle="modal" data-target="#modal{{ forloop.counter }}" style="text-decoration: none;">
+                <div class="bigpic">
+                    {% image artist.artistDeets.profile max-1000x1000 as profile %}
+                    <img src="{{ profile.url }}" alt="" id="bigpic">
+                </div>
                 <div class="artist-imgs">
                     {% image artist.artistDeets.profile max-1000x1000 as profile %}
                     <img src="{{ profile.url }}" alt="" id="sun">
@@ -50,15 +54,36 @@
                     <h2>{{ artist.artistDeets.artist_name }}</h2>
                     <p>{{ artist.artistDeets.caption }}</p>
                 </div>
+                <div class="button">
+                    <p>Order Here</p>
+                </div>
+                <div class="design">
+                    <p>Collective Designs</p>
+                    <p2>{{ artist.artistDeets.works }}</p2>
+                </div>
             </a>
         </div> 
+        <div class="box">
+            <p>something</p>
+        </div>
     {% elif forloop.counter|divisibleby:2 %}
         <div class="artist-frame2">
             <div class="container2">
                 <a href="" data-toggle="modal" data-target="#modal{{ forloop.counter }}" style="text-decoration: none;">
+                    <div class="button2">
+                        <p>Order Here</p>
+                    </div>
                     <div class="caption2">
                         <h2>{{ artist.artistDeets.artist_name }}</h2>
                         <p>{{ artist.artistDeets.caption }}</p>
+                    </div>
+                    <div class="design2">
+                        <p>Collective Designs</p>
+                        <p2>{{ artist.artistDeets.works }}</p2>
+                    </div>
+                    <div class="bigpic2">
+                        {% image artist.artistDeets.profile max-1000x1000 as profile %}
+                        <img src="{{ profile.url }}" alt="" id="bigpic2">
                     </div>
                     <div class="artist-imgs2">
                         {% image artist.artistDeets.profile max-1000x1000 as profile %}
@@ -72,6 +97,9 @@
                     </div>
                 </a>
             </div>
+        </div>
+        <div class="box">
+            <p>something</p>
         </div>
      {% endif %}
 
@@ -89,6 +117,11 @@
                             <img src="{{ display.url }}" alt="">
                             <div class="order-mob">ORDER</div>
                         </a>
+                        <div class="order-here">
+                            <a linktype="page" rel="external" href="http://{{ design.designDeets.link }}" id="order-here">
+                                <h3>Click me to buy</h3>
+                            </a>
+                        </div>
                         <div class="details">
                             <h2>{{ design.designDeets.design_name }}</h2><br>
                             <h3>*hover over image to order*</h3>

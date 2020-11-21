@@ -7,6 +7,7 @@
     width: 100%;
     height: 600px;
     padding: 0 8% 0px 7%;
+    overflow: hidden;
 }
 
 .artist-frame1>a {
@@ -19,17 +20,48 @@
     padding-top: 60px;
     text-decoration: none;
 }
-
+.bigpic{
+    width: 600px;
+    height: 650px;
+    margin: -100px 0px 0 -100px;
+    background-color: blue;
+}
+#bigpic{
+    opacity: 0.35;
+    width: 600px;
+    height: auto;
+}
 .artist-imgs {
+    position: absolute;
     width: 300px;
     height: 27.6%;
-    margin: auto 150px auto 193px;
+    margin: auto 0px auto 100px;
+    margin-top: 100px;
 }
-
 .caption {
+    position: absolute;
     width: 500px;
     height: 260px;
-    margin: 140px 0 auto;
+    margin: 140px 600px auto;
+    color: black;
+    transform: translate(50px, 0);
+    overflow: hidden;
+}
+
+.button {
+    position: absolute;
+    width: 90px;
+    height: 30px;
+    margin: 50px 600px 0;
+    border: 1px solid black;
+    transform: translate(50px, 0);
+    border-radius: 10px;
+}
+.design {
+    position: absolute;
+    width: 500px;
+    height: 260px;
+    margin: 350px 600px auto;
     color: black;
     transform: translate(50px, 0);
     overflow: hidden;
@@ -78,6 +110,9 @@
 
 
 /* modal */
+.modal-dialog{
+    border-radius: 100px;
+}
 
 .modal-content {
     display: flex;
@@ -85,6 +120,7 @@
     height: 651px;
     margin: 135px auto auto;
     padding: 72px 79px 0;
+    border-radius: 50px !important; 
 }
 
 .modal-content>a {
@@ -106,6 +142,7 @@
     width: 100%;
     margin: .5rem 5% auto 0;
     overflow: hidden;
+
 }
 
 .form>h4 {
@@ -113,18 +150,20 @@
 }
 
 #product {
+    position: absolute;
     width: 300px;
+    height: 575px;
 }
 
 #product>img {
     width: 300px;
-    height: 575px;
+    height: auto;
 }
 
 #product>div {
     position: absolute;
     width: 300px;
-    height: 575px;
+    height: auto;
 }
 
 #product>div:hover {
@@ -142,7 +181,17 @@
 #product>div>h3:hover {
     opacity: unset;
 }
-
+.order-here{
+    position: absolute;
+    width: 300px;
+    margin: 420px -50px 0;
+    text-align: center;
+    background-color: blue;
+    transform: translate(50px, 0);
+}
+.order-here>a>h3{
+    color: white;
+}
 .details {
     display: flex;
     flex-direction: column;
@@ -152,18 +201,21 @@
 }
 
 .details>h2 {
-    transform: translate(330px, -610px);
+    position: absolute;
+    transform: translate(330px, 0px);
 }
 
 .details>h3 {
-    transform: translate(330px, -630px);
+    position: absolute;
+    transform: translate(330px, 45px);
     font-size: 10px;
     color: red;
 }
 
 .details>p {
+    position: absolute;
     height: 80%;
-    transform: translate(330px, -620px);
+    transform: translate(330px, 65px);
     margin: 0 52% 0 0;
     font-size: 90%;
     text-align: justify;
@@ -182,19 +234,29 @@
 
 /* /artist-frame1 */
 
+.box{
+    width: 100%;
+    height: 50px;
+    background-color: black;
+}
+.box>p{
+    padding-top: 5px;
+    color: white;
+    text-align: center;
+}
+
 
 /* artist-frame2 */
 
 .artist-frame2 {
     width: 100%;
-    height: 450px;
+    height: 600px;
     padding: 0 10% 0px 2%;
     overflow: hidden;
 }
 
 .artist-frame2>a {
     display: flex;
-    float: right;
     flex-direction: row;
     width: 100%;
     height: 500px;
@@ -202,6 +264,8 @@
     color: black;
     overflow: hidden;
     text-decoration: none;
+    border: 1px solid black;
+
 }
 
 .artist-frame2>.container2 {
@@ -209,10 +273,9 @@
     width: 100%;
     height: fit-content;
     margin: 0% 0% 0% 0%;
-    padding-top: 70px;
+    padding-top: 0px;
     color: #411CD6;
     overflow: visible;
-    text-align: right;
 }
 
 .container2>a {
@@ -225,13 +288,31 @@
     padding: 80px 60px 0;
 }
 
+.button2 {
+    position: absolute;
+    width: 90px;
+    height: 30px;
+    margin: 20px 50px 0;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
 .caption2 {
+    position: absolute;
     width: 500px;
     height: 260px;
     color: black;
     float: left;
-    margin: 0 50px 0;
-    transform: translate(50px, 0px);
+    margin: 70px 50px 0;
+    overflow: hidden;
+}
+.design2 {
+    position: absolute;
+    width: 500px;
+    height: 260px;
+    color: black;
+    float: left;
+    margin: 260px 50px 0;
     overflow: hidden;
 }
 
@@ -243,12 +324,26 @@
     font-size: 12px;
     line-height: 15px;
 }
+.bigpic2{
+    width: 600px;
+    height: 650PX;
+    margin-left: 550px;
+    margin-bottom: 300px;
+    transform: translate(0, -100px);
+    background-color: blue;
+}
+#bigpic2{
+    opacity: 0.35;
+    width: 600px;
+    height: auto;
+}
 
 .artist-imgs2 {
+    position: absolute;
     width: 300px;
     height: 50px;
-    float: right;
-    margin-left: 30px;
+    margin-left: 750px;
+    margin-top: 100px;
 }
 
 
