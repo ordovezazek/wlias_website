@@ -64,7 +64,7 @@
             </a>
         </div> 
         <div class="box">
-            <p>something</p>
+            <p>{{ artist.artistDeets.boxcap }}</p>
         </div>
     {% elif forloop.counter|divisibleby:2 %}
         <div class="artist-frame2">
@@ -99,7 +99,7 @@
             </div>
         </div>
         <div class="box">
-            <p>something</p>
+            <p>{{ artist.artistDeets.boxcap }}</p>
         </div>
      {% endif %}
 
@@ -115,7 +115,6 @@
                         <a linktype="page" rel="external" href="http://{{ design.designDeets.link }}" id="product">
                             <div id="instruct"><h3>TOUCH TO ORDER</h3></div>
                             <img src="{{ display.url }}" alt="">
-                            <div class="order-mob">ORDER</div>
                         </a>
                         <div class="order-here">
                             <a linktype="page" rel="external" href="http://{{ design.designDeets.link }}" id="order-here">

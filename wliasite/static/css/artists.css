@@ -6,7 +6,6 @@
 .artist-frame1 {
     width: 100%;
     height: 600px;
-    padding: 0 8% 0px 7%;
     overflow: hidden;
 }
 
@@ -23,7 +22,7 @@
 .bigpic{
     width: 600px;
     height: 650px;
-    margin: -100px 0px 0 -100px;
+    margin: -100px 0px 0 0px;
     background-color: blue;
 }
 #bigpic{
@@ -35,7 +34,7 @@
     position: absolute;
     width: 300px;
     height: 27.6%;
-    margin: auto 0px auto 100px;
+    margin: auto 0px auto 250px;
     margin-top: 100px;
 }
 .caption {
@@ -327,7 +326,7 @@
 .bigpic2{
     width: 600px;
     height: 650PX;
-    margin-left: 550px;
+    margin-left: 90%;
     margin-bottom: 300px;
     transform: translate(0, -100px);
     background-color: blue;
@@ -342,7 +341,7 @@
     position: absolute;
     width: 300px;
     height: 50px;
-    margin-left: 750px;
+    margin-left: 60%;
     margin-top: 100px;
 }
 
