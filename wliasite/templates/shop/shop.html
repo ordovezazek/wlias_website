@@ -9,12 +9,14 @@
 {% block extra_css %}
 
 <style>
-    @media (max-width:1440px) and (min-width: 768px) {
-        #order-text {
-            height: 5vh;
-            top: 155% !important;
-            background-color: #001DB8 !important;
-        }
+    .card {
+        width: 130px;
+        height: 195px;
+        background: url("/examples/images/card-back.jpg") no-repeat;
+        margin: 50px;
+    }
+    .card:hover {
+        background: url("/examples/images/card-front.jpg") no-repeat;
     }
 </style>
 
@@ -44,15 +46,19 @@
         {% for product in self.designs.all %}
             {% image product.product.product max-1000x1000 as PImg %}
             {% image product.product.display max-1000x1000 as DImg %}
-            <a linktype="page" rel="external" href="http://{{ product.product.link }}" id="order-container">
-                <img id="prod-img" src="{{ PImg.url }}" alt="">
-                <div class="overlay" style="background: url('{{ DImg.url }}');">
-                    {% comment %} <div class="order-text">ORDER NOW</div> {% endcomment %}
+            <div class="shop-elements">
+                <div id="order-container" style="background: url('{{ DImg.url }}');">
+                    <a linktype="page" rel="external" href="http://{{ product.product.link }}">
+                        <img id="prod-img" src="{{ PImg.url }}" alt="">
+                    </a>
                 </div>
-                <div id="order"><h3>{{ product.product.design_name }}</h3></div>
-                <div id="ot-mobile">ORDER NOW</div>
-            </a>
-            
+                <div id="order-box">
+                    <div id="prod-name"><h3>{{ product.product.design_name }}</h3></div>
+                    <a linktype="page" rel="external" href="http://{{ product.product.link }}" id="order-button">
+                        <p>ORDER</p>
+                    </a>
+                </div>
+            </div>
         {% endfor %}
     </div>
 
