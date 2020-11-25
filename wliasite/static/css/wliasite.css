@@ -275,11 +275,11 @@ nav {
 /* ======/landing====== */
 
 
-/* ======artists======
+/* ======artists====== */
 
 
 /* artist-frame1 */
-/*
+
 .artist-frame1 {
     width: 100%;
     height: 600px;
@@ -354,7 +354,7 @@ nav {
 
 
 /* modal */
-/*
+
 .modal-content {
     display: flex;
     flex-direction: row;
@@ -460,7 +460,7 @@ nav {
 
 
 /* artist-frame2 */
-/*
+
 .artist-frame2 {
     width: 100%;
     height: 450px;
@@ -525,7 +525,7 @@ nav {
     float: right;
     margin-left: 30px;
 }
- */
+
 
 /* /artist-frame2 */
 
