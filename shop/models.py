@@ -28,9 +28,57 @@ from wagtail.admin.edit_handlers import (
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from wagtail.search.models import Query
+
+# from artists.models import 
  
 
 class ShopPage(Page):
     template = 'shop/shop.html'
 
     max_count = 1
+
+    collection = models.CharField(max_length=1000)
+
+    content_panels = Page.content_panels + [
+
+                
+        MultiFieldPanel(
+                [
+                    FieldPanel("collection"),
+                ],
+                heading="Collection Heading",
+        ),
+        MultiFieldPanel(
+                [
+                    InlinePanel("designs", label="Products", min_num=1, max_num=100),
+                ],
+                heading="Shop Products",
+        ),
+    ]
+
+    #sets slug
+    def full_clean(self, *args, **kwargs):
+        # super(HomePage, self).full_clean(*args, **kwargs)
+
+        if not self.slug.startswith('shop'):
+            self.slug = 'shop'
+
+    # def get_context(self, request):
+    #     context = super(ShopPage, self).get_context(request)
+    #     context['products'] = self.designs.all()
+
+    #     return context
+
+class ShopPageOrderable(Orderable):
+    
+    page = ParentalKey("shop.ShopPage", related_name="designs")
+    product = models.ForeignKey(
+        "artists.Design",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True
+    )
+
+    panels = [
+        SnippetChooserPanel("product"),
+    ]

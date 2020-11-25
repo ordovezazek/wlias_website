@@ -16,54 +16,69 @@
         <nav class="nav1" id="nav1">
             <a class="navlink" href="{% slugurl 'home' %}" id="navlink1" style="border-color: #001DB8;">home</a>
             <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2">artists</a>
+            <a class="navlink" href="{% slugurl 'shop' %}" id="navlink2">shop</a>
             {% comment %} <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3">collections</a> {% endcomment %}
             <a class="navlink" href="{% slugurl 'home' %}" id="navlink3">collections</a>
         </nav>
         <nav class="nav2 flex-column">
             <a class="navlink" href="{% slugurl 'home' %}" id="navlink1" style="border-color: #001DB8;">home</a>
             <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2">artists</a>
+            <a class="navlink" href="{% slugurl 'shop' %}" id="navlink2">shop</a>
             {% comment %} <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3">collections</a> {% endcomment %}
             <a class="navlink" href="{% slugurl 'home' %}" id="navlink3">collections</a>
         </nav>
     </div>
 
     <div class="logo-container">
-        <a href="#" class="logo">
+        <span href="#" class="logo">
             <img src="{% static 'assets/logo-new.png' %}" alt="#">
-        </a>
-        <h1>WE LIVE IN A SOCIETY</h1>
+        </span> 
+        <h2>{{ page.collection_name }} COLLECTION</h1>
     </div>
     
 
-    <div class="frame1">
-        <div class="feature">
-
-            <h1>{{ page.collection_name }} COLLECTION</h1>
-
-            <div class="feature-imgs">
-                {% image page.img1 max-500x500 as Img1 %}
-                <img src="{{ Img1.url }}" alt="" id="lift">
-                {% image page.img2 max-500x500 as Img2 %}
-                <img src="{{ Img2.url }}" alt="">
-                {% image page.img3 max-500x500 as Img3 %}
-                <img src="{{ Img3.url }}" alt="" id="lift">
+    <section class="frame1">
+        <div id="feature" class="feature">
+            <div class="feature-container">
+                <div class="feature-collage">
+                    {% image page.section1 max-2000x2000 as S1 %}
+                    <img src="{{ S1.url }}" alt="" id="lift">
+                </div>
+                <div class="fixed-feature">
+                    {% image page.section2 max-2000x2000 as S2 %}
+                    <img src="{{ S2.url }}" alt="">
+                </div>
             </div>
 
         </div>
-    </div>
+        <div class="feature-mobile">
+            <div id="feature" class="feature-container">
+                <div class="feature-collage">
+                    {% image page.section1_mobile max-2000x2000 as S1 %}
+                    <img src="{{ S1.url }}" alt="" id="lift">
+                </div>
+                <div class="fixed-feature">
+                    {% image page.section2 max-2000x2000 as S2 %}
+                    <img src="{{ S2.url }}" alt="">
+                </div>
+            </div>
 
-    <div class="frame2">
-        <div class="about">
-            <!-- <h1>WLIA SOCIETY</h1> -->
-            <img src="{% static 'assets/title.png' %}" alt="">
-            <p>{{ page.about }}</p>
+        </div>
+    </section>
+
+    <section class="frame2">
+        <div class="about-container">
+            <div class="about">
+                <h1>we live in a society</h1>
+                <p> {{ page.about|richtext }} </p>
+            </div>
         </div>
         <div class="social">
             <a href="https://www.facebook.com/We-Live-In-A-Society-108396771034748"><i class="fab fa-facebook-square"></i></a>
             <a href="https://www.instagram.com/wliasoc/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
             <a href="https://twitter.com/WLIASoc"><i class="fa fa-twitter" aria-hidden="true"></i></a>
         </div>
-    </div>
+    </section>
 
 {% endblock %}
 

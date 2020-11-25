@@ -1,6 +1,35 @@
-* {
-    font-style: Roboto;
+@font-face {
+    font-family: "WarowniaBoEx";
+    src: url("../fonts/WarowniaBdExt.eot?") format("eot"), url("../fonts/WarowniaBdExt.woff") format("woff"), url("../fonts/WarowniaBdExt.ttf") format("truetype"), url("../fonts/WarowniaBdExt.svg#WarowniaBdExt") format("svg");
+    font-weight: normal;
+    font-style: normal;
 }
+
+* {
+    font-family: WarowniaBoEx;
+    font-style: normal;
+}
+
+
+/* 
+
+[FILE MAP]
+
+Navbar 22
+Landing Page 79
+    Logo 82
+    Frame 1 134
+    Frame 2 170
+Artists Page 229
+    Artist 1 232
+    Modal Content 308
+    Artist 2 414
+Shop Page 489
+
+*/
+
+
+/* ======nav====== */
 
 nav {
     margin: 44px 5.5% 164px;
@@ -19,7 +48,6 @@ nav {
     margin: 8px 5.4% 44px 0;
     width: 30px;
     padding-left: none !important;
-    font-style: Roboto;
     font-weight: normal;
     line-height: 16px;
     color: black;
@@ -42,7 +70,7 @@ nav {
 .navlink:hover {
     color: black;
     text-decoration: none;
-    color: #001DB8;
+    color: #411CD6;
 }
 
 .head-container {
@@ -52,55 +80,63 @@ nav {
 }
 
 
-/* ===landing=== */
+/* ======/nav====== */
+
+
+/* ======landing====== */
 
 
 /* logo */
 
 .logo-container {
-    position: relative;
+    position: absolute;
     z-index: 1;
     width: 100%;
     text-align: center;
-    padding-top: 50px;
-    padding-bottom: 2%;
+    padding-top: -1vh;
+    /* padding-bottom: 2%; */
 }
 
-.logo-container>h1 {
+
+/* .logo-container>h1 {
     position: absolute;
     top: 45%;
     width: 100%;
     align-content: center;
     font-size: 190%;
     z-index: -1;
-}
+    /* visibility: hidden; 
+} */
 
 .logo {
     display: flex;
-    z-index: 1;
-    flex-direction: column;
-    width: 60%;
-    height: auto;
-    margin: 0 auto 17px auto;
-    text-align: center;
-    background-color: white;
-}
-
-.logo:active {
-    visibility: hidden;
-}
-
-.logo>img {
-    margin: 0 auto 17px auto;
-    width: 30%;
-    height: auto;
-}
-
-.soc-container {
+    position: absolute;
     width: 100%;
     z-index: 1;
-    margin: 25px auto 0;
+    flex-direction: column;
     text-align: center;
+    background: rgba(0, 0, 0, 0);
+}
+
+
+/* .logo:active {
+    visibility: hidden;
+} */
+
+.logo>img {
+    width: 300px;
+    height: auto;
+    background: rgb(0, 0, 0, 0);
+    margin: 0 auto;
+}
+
+.logo-container>h2 {
+    margin-bottom: -3.6vh;
+    transform: translate(0, 150px);
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 37px;
+    color: #411CD6;
 }
 
 
@@ -110,36 +146,56 @@ nav {
 /* frame1 */
 
 .frame1 {
-    /* position: relative;
-z-index: -1; */
     width: 100%;
-    height: 50%;
-    padding-top: 35px;
+    height: fit-content;
+    /* padding-top: 35px; */
     text-align: center;
 }
 
-.feature>h1 {
-    margin-bottom: 65px;
-    font-style: Roboto;
-    font-weight: normal;
-    font-size: 30px;
-    line-height: 37px;
-    color: #001DB8;
+.feature-mobile {
+    height: 0;
+    overflow: hidden;
 }
 
-.feature-imgs {
-    display: flex;
-    flex-direction: row;
+.feature-container {
+    /* display: flex;
+    flex-direction: row; */
+    width: 100%;
+    height: auto;
+    text-align: left;
 }
 
-.feature-imgs>img {
-    margin: 0 auto;
-    width: 15%;
+.feature-collage {
+    width: 100%;
+    /* height: auto; */
+    height: fit-content;
+    background-color: #411CD6;
 }
 
-#lift {
+.feature-collage>img {
+    width: 100%;
+    height: auto;
+}
+
+.fixed-feature {
+    width: 100%;
+    /* height: auto; */
+    height: fit-content;
+    background-color: #411CD6;
+    overflow: hidden;
+}
+
+.fixed-feature>img {
+    width: 104%;
+    /* width: 100%; */
+    height: auto;
+    transform: translate(-1.7vw, 0px);
+}
+
+
+/* #lift {
     transform: translate(0, -15%);
-}
+} */
 
 
 /* /frame1 */
@@ -148,39 +204,50 @@ z-index: -1; */
 /* frame2 */
 
 .frame2 {
-    /* position: relative;
-z-index: -1; */
-    height: 50%;
+    height: 102vh;
     width: 100%;
-    padding-top: 5%;
+    padding: 0% 10vw;
     text-align: center;
     background-color: black;
-    margin-top: 15%;
+    margin-top: -3.8vh;
     overflow: hidden;
+    display: block;
+}
+
+.about-container {
+    position: relative;
+    height: 90%;
 }
 
 .about {
+    margin: 0 auto;
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    margin: 5% auto;
-    width: 60%;
+    height: fit-content;
+    width: 100%;
     color: white;
 }
 
-.about>img {
-    width: 310px;
-    height: 32px;
+.about>h1 {
+    width: fit-content;
+    height: fit-content;
     margin: 50px auto;
+    text-align: center;
+    font-size: 2.5rem;
+    word-spacing: 10px;
 }
 
-.about>p {
-    margin-top: 3%;
+.about {
+    /* margin-top: 3%; */
     text-align: left;
-    /* font-family: Montserrat; */
-    font-style: normal;
     font-weight: normal;
     font-size: 20px;
-    line-height: 50px;
+    line-height: 5vh;
     text-align: justify;
     text-justify: inter-word;
 }
@@ -193,6 +260,7 @@ z-index: -1; */
     margin: 0 200px 0 0;
     width: 50px;
     font-size: 40px;
+    transform: translate(2vw, -5vh);
 }
 
 .social>a {
@@ -204,10 +272,10 @@ z-index: -1; */
 /* /frame2 */
 
 
-/* ===/landing=== */
+/* ======/landing====== */
 
 
-/* ===artists=== */
+/* ======artists====== */
 
 
 /* artist-frame1 */
@@ -232,7 +300,6 @@ z-index: -1; */
 .artist-imgs {
     width: 300px;
     height: 27.6%;
-    /* padding: 100px 10% auto 2px; */
     margin: auto 150px auto 193px;
 }
 
@@ -280,11 +347,13 @@ z-index: -1; */
 .caption>p {
     padding-top: 10px;
     color: black;
-    font-style: normal;
     font-weight: normal;
     font-size: 12px;
     line-height: 15px;
 }
+
+
+/* modal */
 
 .modal-content {
     display: flex;
@@ -417,8 +486,7 @@ z-index: -1; */
     height: fit-content;
     margin: 0% 0% 0% 0%;
     padding-top: 70px;
-    /* padding-left: 20%; */
-    color: #001DB8;
+    color: #411CD6;
     overflow: visible;
     text-align: right;
 }
@@ -446,7 +514,6 @@ z-index: -1; */
 .caption2>p {
     padding-top: 10px;
     color: black;
-    font-style: normal;
     font-weight: normal;
     font-size: 12px;
     line-height: 15px;
@@ -457,453 +524,110 @@ z-index: -1; */
     height: 50px;
     float: right;
     margin-left: 30px;
-    /* padding: 100px 10% auto 2px; */
-    /* margin: 120% -800% 15% 0%; */
 }
 
 
 /* /artist-frame2 */
 
 
-/* ===/mobile responsiveness=== */
+/* ======/artists====== */
 
-@media screen and (max-width: 992px) {
-    /* .logo-container>h1 {
-position: absolute;
-margin: -170px 38% 0 38%;
-text-align: center;
-z-index: -1;
-} */
-    .modal-content {
-        height: 700px;
-        margin: 20% 0 0 0;
-        padding: 69px 73px 0;
-        align-content: center;
-    }
-    .form {
-        height: 100%;
-        width: 100%;
-        margin: .5rem 0 auto 0;
-    }
-    #product {
-        width: 100%;
-        padding-bottom: 80px;
-        border-bottom: 1px solid gray;
-        text-align: center;
-    }
-    #product>img {
-        width: 60%;
-        height: 100%;
-        margin: 0 20%;
-    }
-    #product>#instruct {
-        display: none;
-    }
-    #product>.order-mob {
-        background-color: #001DB8;
-        color: white;
-        height: 30px;
-        width: 100px;
-        margin: 20px 35%;
-        padding-top: 2px;
-        border-radius: 12px;
-    }
-    .details {
-        height: 100%;
-        padding-top: 10px;
-    }
-    .details>h2 {
-        transform: none;
-        font-size: 150%;
-    }
-    .details>h3 {
-        display: none;
-    }
-    .details>p {
-        height: 340px;
-        margin: -25px 0 0 0;
-        transform: none;
-        font-size: 60%;
-        line-height: 17px;
-    }
-    #thumb-container {
-        transform: none;
-        padding-top: 20px;
-    }
-    #thumb {
-        margin-bottom: 20px;
-    }
-    #options>ul {
-        width: fit-content;
-        margin: 0 auto !important;
-    }
+
+/* ======shop====== */
+
+.heading {
+    width: 90vw;
+    background-color: #411CD6;
+    color: white;
+    padding: 6px 12px 6px;
+    margin: 36px auto 0;
 }
 
-@media only screen and (max-width: 769px) {
-    .head-container {
-        height: fit-content;
-    }
-    nav {
-        /*margin: 44px 5.5% 164px;*/
-        margin: 0 0 0;
-        padding-top: 5%;
-    }
-    .nav1 {
-        display: none;
-    }
-    .nav2 {
-        display: flex;
-        padding-top: 20px;
-        padding-bottom: 20px
-    }
-    .navlink {
-        margin: 4% auto 4% auto;
-    }
-    .logo-container {
-        align-content: center;
-    }
-    .logo {
-        width: 100%;
-    }
-    /* .logo.img {
-        ;
-        width: 100%;
-    } */
-    .frame1 {
-        height: auto;
-    }
-    .feature-imgs {
-        flex-direction: column;
-        margin-bottom: 10%;
-    }
-    .feature-imgs>img {
-        margin: 5% auto;
-        width: 60%;
-    }
-    .feature>h1 {
-        font-size: 20px;
-        line-height: 27px;
-    }
-    #lift {
-        transform: translate(0, 0);
-    }
-    /* /frame1 */
-    /* frame2 */
-    .frame2 {
-        height: fit-content;
-        padding-top: 30px;
-    }
-    .about {
-        margin: 0 auto;
-        width: 80%;
-    }
-    .about>img {
-        width: auto;
-        height: auto;
-    }
-    .about>p {
-        margin: 3% auto 0;
-        width: 90%;
-        line-height: 30px;
-    }
-    .social {
-        display: flex;
-        flex-direction: row;
-        margin: 50px 0 0;
-        height: fit-content;
-        padding-bottom: 30px;
-        width: 100%;
-        font-size: 50px;
-    }
-    .social>a {
-        margin: 15px 5px;
-        width: 100%;
-    }
-    /* ==== artists page ====*/
-    .artist-frame1 {
-        height: 60%;
-        margin-top: 300px;
-        padding: 0 30px 0;
-    }
-    .artist-frame1>a {
-        display: flex;
-        flex-direction: column;
-        height: 60%;
-        margin: 0 0 0 0%;
-        padding: 40px 30px 0;
-        text-align: center;
-    }
-    .artist-imgs {
-        width: inherit;
-        /* height: 500px; */
-        transform: translate(-105px, 10px);
-        margin: 0 0 0 0;
-    }
-    #sun {
-        height: 138px;
-        width: 98px;
-    }
-    #moon {
-        height: 68.5px;
-        width: 66px;
-        transform: translate(-55px, -50px);
-    }
-    #mars {
-        height: 23.5px;
-        width: 22.5px;
-        transform: translate(105px, -30px);
-    }
-    #jupiter {
-        height: 35px;
-        width: 33.5px;
-        transform: translate(120px, 110px);
-    }
-    .caption {
-        width: 100%;
-        margin: 100px 0 0;
-        margin-left: -50px;
-    }
-    .modal-content {
-        flex-direction: row;
-        height: 651px;
-        margin: 25% 0 25% 0;
-        padding: 50px 53px 0;
-        align-content: center;
-    }
-    .modal-content>a {
-        position: absolute;
-        font-size: 30px;
-        transform: translate(-30px, -30px);
-    }
-    .form {
-        height: 100%;
-        margin: .5rem 0 0 0;
-        overflow: hidden;
-    }
-    .details {
-        height: 400px;
-        padding-top: 10px;
-    }
-    .details>h2 {
-        transform: none;
-        font-size: 150%;
-    }
-    .details>p {
-        height: 400px;
-        margin: -20px 0 0 0;
-        transform: none;
-        font-size: 65%;
-        line-height: 15px;
-        padding-bottom: 50px;
-    }
-    #thumb-container {
-        transform: none;
-    }
-    /* /artist-frame1 */
-    /* artist-frame2 */
-    .artist-frame2 {
-        padding: 0;
-        width: 100%;
-        height: 60%;
-    }
-    .container2 {
-        padding-top: 0 !important;
-        text-align: center padding-bottom: 0px;
-    }
-    .container2>a {
-        float: none;
-        flex-direction: column-reverse !important;
-        margin: 0;
-        padding: auto 0 !important;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-    }
-    .artist-imgs2 {
-        width: 100% !important;
-        margin: 250px 0 100px !important;
-        height: 17%;
-        /* padding: 100px 10% auto 2px; */
-        transform: translate(-108px, 0);
-    }
-    /* .artist-frame2>.container2 {
-        position: relative;
-        display: flex;
-        float: left;
-        flex-direction: row;
-        width: 800px;
-        height: 500px;
-        margin: 30% 0% 0% 40%;
-        padding-top: 50px;
-        color: #001DB8;
-        overflow: visible;
-    } */
-    .caption2 {
-        width: 100%;
-        margin: 0 !important;
-        height: fit-content !important;
-        transform: translate(0px, 0);
-    }
+.shop-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    width: 90vw;
+    height: auto;
+    margin: 0 auto;
+    /* overflow: hidden; */
+    background-color: white;
+}
+
+.shop-elements {
+    width: 100%;
+    height: auto;
+    margin: 0 0 12vh;
+    /* background-color: #411CD6; */
+}
+
+#prod-img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 3;
+}
+
+#disp-img {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: auto;
+}
+
+#prod-img:hover {
+    opacity: 0;
+}
+
+#order-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-size: cover !important;
+    overflow: hidden;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    width: 90vw;
+    height: auto;
+    margin: 0 auto 8vh;
+    /* overflow: hidden; */
+    /* background-color: red; */
+}
+
+#order-box {
+    width: 100%;
+    height: 10vh;
+    font-size: 100%;
+    text-align: center;
+    margin-top: 3vw;
+}
+
+#prod-name {
+    height: fit-content;
+    font-size: 1.5vw;
+    color: #411CD6;
+    text-align: center;
+    padding: 0 10px;
+    margin-bottom: 4vh;
+    text-align: center;
+}
+
+#order-button {
+    position: absolute;
+    width: 170px;
+    height: fit-content;
+    padding-top: 10px;
+    transform: translate(-50%, 0);
+    font-size: 150%;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    text-decoration: none;
 }
 
 
-/* extra responsiveness fixes */
-
-@media (max-width:978px) and (min-width: 769px) {
-    .social {
-        display: block;
-        width: 100%;
-        float: none;
-        margin: auto auto;
-    }
-    .social>a {
-        margin-right: 50px;
-    }
-}
-
-@media (max-width:768px) and (min-width: 500px) {
-    .artist-imgs {
-        padding-top: 20px;
-    }
-    .artist-imgs2 {
-        width: 20%;
-        height: 30%;
-        /* margin: auto 0 auto 80px; */
-        float: none;
-        padding-top: 20px;
-    }
-    #sun {
-        height: 250px;
-        width: 200px;
-        transform: translate(0px, -200px);
-    }
-    #moon {
-        height: 140px;
-        width: 140px;
-        transform: translate(-110px, -300px);
-    }
-    #mars {
-        height: 50px;
-        width: 50px;
-        transform: translate(210px, -260px);
-    }
-    #jupiter {
-        height: 70px;
-        width: 70px;
-        transform: translate(240px, -110px);
-    }
-}
-
-@media only screen and (max-width: 425px) {
-    .about>img {
-        width: 250px;
-        height: 25px;
-    }
-    .about>p {
-        font-size: medium;
-    }
-    #thumb {
-        width: 40px;
-        height: 40px;
-    }
-    .modal-content {
-        width: 100%;
-        height: 600px;
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    .details>p {
-        font-size: 60%;
-    }
-    .artist-frame1 {
-        margin: 50px 0 0;
-    }
-    .artist-imgs {
-        /* background-color: black; */
-        width: 100%;
-        height: 30px;
-        transform: translate(-50px, 0px);
-    }
-    .caption {
-        margin-top: 180px;
-        height: fit-content;
-    }
-    .artist-frame2 {
-        padding-top: 100px;
-        margin-bottom: 100px;
-    }
-    .container2>a {
-        padding: 0 60px 0 !important;
-    }
-    .caption2 {
-        margin-top: 200px;
-    }
-    .artist-imgs2 {
-        width: 100%;
-        height: 30px;
-        transform: translate(-50px, 0);
-        margin: 30px 0 200px !important;
-    }
-    #sun {
-        height: 138px;
-        width: 98px;
-    }
-    #moon {
-        height: 68.5px;
-        width: 66px;
-        transform: translate(-55px, -50px);
-    }
-    #mars {
-        height: 23.5px;
-        width: 22.5px;
-        transform: translate(105px, -30px);
-    }
-    #jupiter {
-        height: 35px;
-        width: 33.5px;
-        transform: translate(120px, 110px);
-    }
-}
-
-
-/* @media (max-width:1000px) and (min-width: 993px) {
-    .form {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        height: 461px;
-        width: 100%;
-        margin: .5rem 5% auto 0;
-        overflow: hidden;
-    }
-    .form>h4 {
-        height: 0;
-    }
-    #product>img {
-        width: 300px;
-        height: 575px;
-    }
-    .details {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 461px;
-        margin: 0 0 0 0;
-        padding-top: 30px;
-    }
-    .details>h2 {
-        transform: translate(330px, -610px);
-    }
-    .details>p {
-        height: 80%;
-        transform: translate(330px, -620px);
-        margin: 0 50% 0 0;
-        font-size: 95%;
-        line-height: 24px;
-    }
-    #thumb-container {
-        margin: 0 -10px 0 0;
-        transform: translate(330px, -100px);
-    }
-} */
+/* ======/shop====== */

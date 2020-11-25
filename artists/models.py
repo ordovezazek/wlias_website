@@ -79,6 +79,8 @@ class ArtistAreaOrderable(Orderable):
 class Artist(ClusterableModel):
     artist_name = models.CharField(max_length=100)
     caption = models.CharField(max_length=1000)
+    works = models.CharField(max_length=1000)
+    boxcap = models.CharField(max_length=1000)
     profile = models.ForeignKey(
         "wagtailimages.Image",
         on_delete=models.SET_NULL,
@@ -114,6 +116,8 @@ class Artist(ClusterableModel):
             [
                 FieldPanel('artist_name'),
                 FieldPanel('caption'),
+                FieldPanel('works'),
+                FieldPanel('boxcap'),
                 ImageChooserPanel("profile"),
                 ImageChooserPanel("moon"),
                 ImageChooserPanel("mars"),
@@ -166,12 +170,20 @@ class Design(models.Model):
         blank=False,
         related_name="+",
     )
+    product = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=False,
+        related_name="+",
+    )
 
     panels = [
 
         FieldPanel("design_name"),
         FieldPanel("story"),
         ImageChooserPanel("display"),
+        ImageChooserPanel("product"),
         FieldPanel('order_link'),
     ]
 
