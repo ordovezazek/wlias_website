@@ -193,7 +193,7 @@ Extra Responsiveness 302
         transform: translate(-105px, 10px);
         margin: 0 0 0 0;
     }
-    #sun {
+    /* #sun {
         height: 138px;
         width: 98px;
     }
@@ -211,7 +211,7 @@ Extra Responsiveness 302
         height: 35px;
         width: 33.5px;
         transform: translate(120px, 110px);
-    }
+    } */
     .caption {
         width: 100%;
         margin: 100px 0 0;
@@ -291,10 +291,6 @@ Extra Responsiveness 302
     /* ======shop====== */
     .shop-container {
         flex-direction: column;
-<<<<<<< HEAD
-        width: 560vw;
-=======
->>>>>>> 11f231dc3b835b96379dd06e1b8fcba5c614e36f
         background-color: white;
     }
     .shop-container>a>img {
@@ -393,7 +389,7 @@ Extra Responsiveness 302
         float: none;
         padding-top: 20px;
     }
-    #sun {
+    /* #sun {
         height: 250px;
         width: 200px;
         transform: translate(0px, -200px);
@@ -412,7 +408,7 @@ Extra Responsiveness 302
         height: 70px;
         width: 70px;
         transform: translate(240px, -110px);
-    }
+    } */
     #ot-mobile {
         top: 133%;
         width: 100%;

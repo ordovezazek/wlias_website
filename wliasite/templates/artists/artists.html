@@ -34,13 +34,16 @@
 
 {% for artist in self.artists.all %}
     {% if not forloop.counter|divisibleby:2 %}
+    <div class="box">
+        <p>{{ artist.artistDeets.boxcap }}</p>
+    </div>
         <div class="artist-frame1">
             <a href="" data-toggle="modal" data-target="#modal{{ forloop.counter }}" style="text-decoration: none;">
                 <div class="bigpic">
                     {% image artist.artistDeets.profile max-1000x1000 as profile %}
                     <img src="{{ profile.url }}" alt="" id="bigpic">
                 </div>
-                <div class="artist-imgs">
+                <!-- <div class="artist-imgs">
                     {% image artist.artistDeets.profile max-1000x1000 as profile %}
                     <img src="{{ profile.url }}" alt="" id="sun">
                     {% image artist.artistDeets.moon max-1000x1000 as moon %}
@@ -49,7 +52,7 @@
                     <img src="{{ mars.url }}" alt="" id="mars">
                     {% image artist.artistDeets.jupiter max-1000x1000 as jupiter %}
                     <img src="{{ jupiter.url}}" alt="" id="jupiter">
-                </div>
+                </div> -->
                 <div class="caption">
                     <h2>{{ artist.artistDeets.artist_name }}</h2>
                     <p>{{ artist.artistDeets.caption }}</p>
@@ -58,15 +61,15 @@
                     <p>Order Here</p>
                 </div>
                 <div class="design">
-                    <p>Collective Designs</p>
-                    <p2>{{ artist.artistDeets.works }}</p2>
+                    <p1>Collective Designs</p1>
+                    <p>{{ artist.artistDeets.works }}</p>
                 </div>
             </a>
         </div> 
-        <div class="box">
-            <p>{{ artist.artistDeets.boxcap }}</p>
-        </div>
     {% elif forloop.counter|divisibleby:2 %}
+    <div class="box">
+        <p>{{ artist.artistDeets.boxcap }}</p>
+    </div>
         <div class="artist-frame2">
             <div class="container2">
                 <a href="" data-toggle="modal" data-target="#modal{{ forloop.counter }}" style="text-decoration: none;">
@@ -78,14 +81,14 @@
                         <p>{{ artist.artistDeets.caption }}</p>
                     </div>
                     <div class="design2">
-                        <p>Collective Designs</p>
-                        <p2>{{ artist.artistDeets.works }}</p2>
+                        <p1>Collective Designs</p1>
+                        <p>{{ artist.artistDeets.works }}</p>
                     </div>
                     <div class="bigpic2">
                         {% image artist.artistDeets.profile max-1000x1000 as profile %}
                         <img src="{{ profile.url }}" alt="" id="bigpic2">
                     </div>
-                    <div class="artist-imgs2">
+                    <!-- <div class="artist-imgs2">
                         {% image artist.artistDeets.profile max-1000x1000 as profile %}
                         <img src="{{ profile.url }}" alt="" id="sun">
                         {% image artist.artistDeets.moon max-1000x1000 as moon %}
@@ -94,12 +97,9 @@
                         <img src="{{ mars.url }}" alt="" id="mars">
                         {% image artist.artistDeets.jupiter max-1000x1000 as jupiter %}
                         <img src="{{ jupiter.url}}" alt="" id="jupiter">
-                    </div>
+                    </div> -->
                 </a>
             </div>
-        </div>
-        <div class="box">
-            <p>{{ artist.artistDeets.boxcap }}</p>
         </div>
      {% endif %}
 

@@ -23,7 +23,7 @@
     width: 600px;
     height: 650px;
     margin: -100px 0px 0 0px;
-    background-color: blue;
+    background-color: #411CD6;
 }
 #bigpic{
     opacity: 0.35;
@@ -34,7 +34,7 @@
     position: absolute;
     width: 300px;
     height: 27.6%;
-    margin: auto 0px auto 250px;
+    margin: auto 0px auto 200px;
     margin-top: 100px;
 }
 .caption {
@@ -49,12 +49,17 @@
 
 .button {
     position: absolute;
-    width: 90px;
-    height: 30px;
+    width: 120px;
+    height: 40px;
     margin: 50px 600px 0;
-    border: 1px solid black;
+    background-color: black;
     transform: translate(50px, 0);
-    border-radius: 10px;
+    border-radius: 5px;
+}
+.button>p{
+    color: white;
+    padding-top: 5px;
+    text-align: center;
 }
 .design {
     position: absolute;
@@ -65,7 +70,9 @@
     transform: translate(50px, 0);
     overflow: hidden;
 }
-
+.design>p{
+    color:  #411CD6;
+}
 #sun {
     position: absolute;
     height: auto;
@@ -235,11 +242,11 @@
 
 .box{
     width: 100%;
-    height: 50px;
+    height: 30px;
     background-color: black;
 }
 .box>p{
-    padding-top: 5px;
+    padding-top: 3px;
     color: white;
     text-align: center;
 }
@@ -250,7 +257,6 @@
 .artist-frame2 {
     width: 100%;
     height: 600px;
-    padding: 0 10% 0px 2%;
     overflow: hidden;
 }
 
@@ -270,7 +276,7 @@
 .artist-frame2>.container2 {
     display: inline-block;
     width: 100%;
-    height: fit-content;
+    height: 600px;
     margin: 0% 0% 0% 0%;
     padding-top: 0px;
     color: #411CD6;
@@ -282,18 +288,23 @@
     display: flex;
     flex-direction: row;
     width: 70%;
-    height: fit-content;
+    height: 600px;
     margin: 0 300px;
     padding: 80px 60px 0;
 }
 
 .button2 {
     position: absolute;
-    width: 90px;
-    height: 30px;
+    width: 120px;
+    height: 40px;
     margin: 20px 50px 0;
-    border: 1px solid black;
-    border-radius: 10px;
+    background-color: black;
+    border-radius: 5px;
+}
+.button2>p{
+    padding-top: 5px;
+    color: white;
+    text-align: center;
 }
 
 .caption2 {
@@ -302,19 +313,21 @@
     height: 260px;
     color: black;
     float: left;
-    margin: 70px 50px 0;
+    margin: 120px 50px 0;
     overflow: hidden;
 }
 .design2 {
     position: absolute;
     width: 500px;
-    height: 260px;
-    color: black;
+    height: 150px;
     float: left;
-    margin: 260px 50px 0;
+    color: black;
+    margin: 310px 50px 0;
     overflow: hidden;
 }
-
+.design2>p {
+    color: #411CD6;
+}
 .caption2>p {
     padding-top: 10px;
     color: black;
@@ -326,10 +339,10 @@
 .bigpic2{
     width: 600px;
     height: 650PX;
-    margin-left: 90%;
+    margin-left: calc(100% - 240px);
     margin-bottom: 300px;
     transform: translate(0, -100px);
-    background-color: blue;
+    background-color: #411CD6;
 }
 #bigpic2{
     opacity: 0.35;
