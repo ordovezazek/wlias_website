@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'artists',
     'wlias_collections',
     'shop',
+    'about',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',

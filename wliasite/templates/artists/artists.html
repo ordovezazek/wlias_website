@@ -16,17 +16,22 @@
     <div class="head-container">
         <nav class="nav1" id="nav1">
             <a class="navlink" href="{% slugurl 'home' %}" id="navlink1">home</a>
+            <a class="navlink" href="{% slugurl 'home' %}#about" id="navlink1">about us</a>
             <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2" style="border-color: #001DB8;">artists</a>
             <a class="navlink" href="{% slugurl 'shop' %}" id="navlink2">shop</a>
             {% comment %} <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3">collections</a> {% endcomment %}
             <a class="navlink" href="{% slugurl 'home' %}" id="navlink3">collections</a>
         </nav>
+        <div id="navig"><a name="navig"></a></div>
         <nav class="nav2 flex-column">
             <a class="navlink" href="{% slugurl 'home' %}" id="navlink1">home</a>
+            <a class="navlink" href="{% slugurl 'home' %}#about" id="navlink1">about us</a>
             <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2" style="border-color: #001DB8;">artists</a>
             <a class="navlink" href="{% slugurl 'shop' %}" id="navlink2">shop</a>
             {% comment %} <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3">collections</a> {% endcomment %}
             <a class="navlink" href="{% slugurl 'home' %}" id="navlink3">collections</a>
+            <a href="#navig" id="upnav"><div class="upnav"><i class="fa fa-arrow-up" aria-hidden="true"></i><div></a>
+            <div id="upnav-container"><a href="#navig" id="upnav"><div class="upnav"><i class="fa fa-arrow-up" aria-hidden="true"></i><div></a></div>
         </nav>
     </div>
 
