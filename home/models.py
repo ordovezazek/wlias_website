@@ -47,6 +47,11 @@ class HomePage(Page):
     brandDescription = RichTextField()
     serviceDescription = RichTextField()
 
+    invitation = models.CharField(
+        max_length=500,
+        blank=True
+    )
+
     content_panels = Page.content_panels + [
 
         MultiFieldPanel(
@@ -61,6 +66,7 @@ class HomePage(Page):
         ),
         FieldPanel('brandDescription'),
         FieldPanel('serviceDescription'),
+        FieldPanel('invitation'),
     ]
         
 
