@@ -2,14 +2,14 @@
 
 [FILE MAP]
 
-Mobile Responsiveness 16
-Small laptops and smaller 19
-Tablets and smaller 88
-Extra Responsiveness 302
-tablet to 1k 305
-big mobile to tablet 320
-Large mobile and smaller 355
-Medium mobile and smaller 411 
+Mobile Responsiveness 
+Small laptops and smaller 
+Tablets and smaller 
+Extra Responsiveness 
+tablet to 1k 
+big mobile to tablet 
+Large mobile and smaller 
+Medium mobile and smaller 
 */
 
 
@@ -87,11 +87,11 @@ Medium mobile and smaller 411
         top: 135%;
     }
 }
-    
-    
-    /* ===tablets=== */
-    
-    @media only screen and (max-width: 768px) {
+
+
+/* ===tablets=== */
+
+@media only screen and (max-width: 768px) {
     .head-container {
         height: fit-content;
     }
@@ -144,36 +144,44 @@ Medium mobile and smaller 411
     }
     /* /frame1 */
     /* frame2 */
-    .frame2 {
-        height: 103vh;
-        padding-top: 30px;
+    #about {
+        transform: translate(0px, 3px)
     }
-    .about {
-        margin: -4vh auto;
-        width: 80%;
+    .about-container {
+        flex-direction: column;
+        margin-top: 50px;
+        padding: 0 6vw;
     }
-    .about>img {
-        width: auto;
-        height: auto;
+    #ad {
+        text-align: center;
+        margin-top: 50px;
+        padding-right: 0;
     }
-    .about>p {
-        margin: 3% auto 0;
-        width: 90%;
-        line-height: 30px;
+    #ad>h2 {
+        font-size: 4.4vw;
+    }
+    #a-desc {
+        text-align: justify;
+        font-size: 2.5vw;
+    }
+    .external-about {
+        margin-bottom: 40px;
+    }
+    .external-about>h2 {
+        font-size: 3.8vw;
+    }
+    #about-button {
+        width: 40%;
+        font-size: 4vw;
     }
     .social {
-        display: block;
-        /* flex-direction: row; */
-        margin: 0 0;
-        height: fit-content;
-        padding-bottom: 30px;
-        width: 100%;
-        font-size: 50px;
+        margin-top: 50px;
+        font-size: 2rem;
     }
-    .social>a {
+    /* .social>a {
         margin: 15px 30px;
         width: 100%;
-    }
+    } */
     /* ====== artists page ======*/
     .artist-frame1 {
         height: 60%;
@@ -300,211 +308,237 @@ Medium mobile and smaller 411
         margin: 100px auto;
         text-align: center;
     }
-    
-    .heading{
+    .heading {
         text-align: center;
     }
-    #order-button{
+    #order-button {
         width: 50%;
     }
     #order-box {
-        margin-top: 5vh;
+        margin-top: 20vh;
         margin-bottom: 5vh;
     }
 }
-    
-    /* ======/shop====== */
-    
-    /* extra responsiveness fixes */
-    /* ===tablet to 1k=== */
-    @media (max-width:1440px) and (min-width: 768px) {
-        #feature {
-            margin-top: 10vh;
-        }
-        #order-text {
-            height: 5vh;
-            top: 155% !important;
-            background-color: #001DB8 !important;
-        }
+
+
+/* ======/shop====== */
+
+
+/* extra responsiveness fixes */
+
+
+/* ===tablet to 1k=== */
+
+@media (max-width:1440px) and (min-width: 768px) {
+    #feature {
+        margin-top: 10vh;
     }
-    @media (max-width:978px) and (min-width: 768px) {
-        .logo>img {
-            width: 250px;
-        }
-        .logo-container>h2 {
-            font-size: 28px;
-            margin-bottom: -3.6vh;
-            transform: translate(0, 120px);
-        }
-        .social {
-            display: block;
-            width: 100%;
-            float: none;
-            margin: auto auto;
-        }
-        .social>a {
-            margin-right: 50px;
-        }
+    #order-text {
+        height: 5vh;
+        top: 155% !important;
+        background-color: #001DB8 !important;
     }
-    /* ===big mobile to tablet=== */
-    @media (max-width:768px) and (min-width: 500px) {
-        /* ======landing====== */
-        .logo-container {
-            margin-top: 5vh;
-        }
-        .logo-container>h2 {
-            font-size: 24px;
-        }
-        #feature {
-            margin-top: 20vh;
-        }
-        /* ======/landing====== */
-        /* ======/artists====== */
-        .artist-imgs {
-            padding-top: 20px;
-        }
-        .artist-imgs2 {
-            width: 20%;
-            height: 30%;
-            float: none;
-            padding-top: 20px;
-        }
-        #sun {
-            height: 250px;
-            width: 200px;
-            transform: translate(0px, -200px);
-        }
-        #moon {
-            height: 140px;
-            width: 140px;
-            transform: translate(-110px, -300px);
-        }
-        #mars {
-            height: 50px;
-            width: 50px;
-            transform: translate(210px, -260px);
-        }
-        #jupiter {
-            height: 70px;
-            width: 70px;
-            transform: translate(240px, -110px);
-        }
+}
+
+@media (max-width:978px) and (min-width: 768px) {
+    .logo>img {
+        width: 250px;
     }
-    @media only screen and (max-width: 695px) {
-        .about>h1 {
-            font-size: 35px;
-        }
-        .about {
-            font-size: 15px;
-            line-height: 4vh;
-        }
+    .logo-container>h2 {
+        font-size: 28px;
+        margin-bottom: -3.6vh;
+        transform: translate(0, 120px);
     }
-    @media only screen and (max-width: 531px) {
-        .about>h1 {
-            font-size: 30px;
-        }
-        .about {
-            /* font-size: 15px; */
-            font-size: 19px;
-            line-height: 3.5vh;
-        }
+    /* .social {
+        display: block;
+        width: 100%;
+        float: none;
+        margin: auto auto;
+    } */
+    /* .social>a {
+        margin-right: 50px;
+    } */
+}
+
+
+/* ===big mobile to tablet=== */
+
+@media (max-width:768px) and (min-width: 500px) {
+    /* ======landing====== */
+    .logo-container {
+        margin-top: 5vh;
     }
-    /* ===large mobile and smaller=== */
-    @media only screen and (max-width: 500px) {
-        .logo>img {
-            width: 200px;
-        }
-        .logo-container {
-            margin-top: 5vh;
-        }
-        .logo-container>h2 {
-            font-size: 20px;
-            margin-bottom: -3.8vh;
-            transform: translate(0, 100px);
-        }
-        #feature {
-            margin-top: 16vh;
-        }
-        /* ======/landing====== */
-        /* ======/artists====== */
-        .details>p {
-            font-size: 60%;
-        }
-        .artist-frame1 {
-            margin: 50px 0 0;
-        }
-        .artist-imgs {
-            width: 100%;
-            height: 30px;
-            transform: translate(-50px, 0px);
-        }
-        .caption {
-            margin-top: 180px;
-            height: fit-content;
-        }
-        .artist-frame2 {
-            padding-top: 100px;
-            margin-bottom: 100px;
-        }
-        .container2>a {
-            padding: 0 60px 0 !important;
-        }
-        .caption2 {
-            margin-top: 200px;
-        }
-        .artist-imgs2 {
-            width: 100%;
-            height: 30px;
-            transform: translate(-50px, 0);
-            margin: 30px 0 200px !important;
-        }
-        #sun {
-            height: 138px;
-            width: 98px;
-        }
-        #moon {
-            height: 68.5px;
-            width: 66px;
-            transform: translate(-55px, -50px);
-        }
-        #mars {
-            height: 23.5px;
-            width: 22.5px;
-            transform: translate(105px, -30px);
-        }
-        #jupiter {
-            height: 35px;
-            width: 33.5px;
-            transform: translate(120px, 110px);
-        }
+    .logo-container>h2 {
+        font-size: 24px;
     }
-    /* ===medium mobile and smaller=== */
-    @media only screen and (max-width: 425px) {
-        .about {
-            line-height: 2.5vh;
-            font-size: 17px;
-        }
-        .about>p {
-            font-size: 10px;
-        }
-        .about-container {
-            margin-bottom: -44px;
-        }
-        .social>a {
-            font-size: 50px;
-            /* margin-right: 85x; */
-        }
-        #thumb {
-            width: 40px;
-            height: 40px;
-        }
-        .modal-content {
-            width: 100%;
-            height: 600px;
-        }
-        #ot-mobile {
-            z-index: 2;
-            width: 100%;
-            top: 138%;
-        }
+    #feature {
+        margin-top: 20vh;
     }
+    /* ======/landing====== */
+    /* ======/artists====== */
+    .artist-imgs {
+        padding-top: 20px;
+    }
+    .artist-imgs2 {
+        width: 20%;
+        height: 30%;
+        float: none;
+        padding-top: 20px;
+    }
+    #sun {
+        height: 250px;
+        width: 200px;
+        transform: translate(0px, -200px);
+    }
+    #moon {
+        height: 140px;
+        width: 140px;
+        transform: translate(-110px, -300px);
+    }
+    #mars {
+        height: 50px;
+        width: 50px;
+        transform: translate(210px, -260px);
+    }
+    #jupiter {
+        height: 70px;
+        width: 70px;
+        transform: translate(240px, -110px);
+    }
+}
+
+@media only screen and (max-width: 695px) {
+    #about-heading {
+        font-size: 35px;
+    }
+}
+
+@media only screen and (max-width: 531px) {
+    #about-heading {
+        font-size: 30px;
+    }
+}
+
+
+/* ===large mobile and smaller=== */
+
+@media only screen and (max-width: 500px) {
+    .logo>img {
+        width: 200px;
+    }
+    .logo-container {
+        margin-top: 5vh;
+    }
+    .logo-container>h2 {
+        font-size: 20px;
+        margin-bottom: -3.8vh;
+        transform: translate(0, 100px);
+    }
+    #feature {
+        margin-top: 16vh;
+    }
+    /* frame2 */
+    #ad>h2 {
+        font-size: 6.4vw;
+    }
+    #a-desc {
+        padding: 20px;
+        text-align: center;
+        font-size: 3vw;
+    }
+    .external-about>h2 {
+        font-size: 4.8vw;
+    }
+    #about-button {
+        font-size: 5vw;
+        width: 50%;
+    }
+    .social {
+        margin-top: 50px;
+        font-size: 2rem;
+    }
+    /* ======/landing====== */
+    /* ======/artists====== */
+    .details>p {
+        font-size: 60%;
+    }
+    .artist-frame1 {
+        margin: 50px 0 0;
+    }
+    .artist-imgs {
+        width: 100%;
+        height: 30px;
+        transform: translate(-50px, 0px);
+    }
+    .caption {
+        margin-top: 180px;
+        height: fit-content;
+    }
+    .artist-frame2 {
+        padding-top: 100px;
+        margin-bottom: 100px;
+    }
+    .container2>a {
+        padding: 0 60px 0 !important;
+    }
+    .caption2 {
+        margin-top: 200px;
+    }
+    .artist-imgs2 {
+        width: 100%;
+        height: 30px;
+        transform: translate(-50px, 0);
+        margin: 30px 0 200px !important;
+    }
+    #sun {
+        height: 138px;
+        width: 98px;
+    }
+    #moon {
+        height: 68.5px;
+        width: 66px;
+        transform: translate(-55px, -50px);
+    }
+    #mars {
+        height: 23.5px;
+        width: 22.5px;
+        transform: translate(105px, -30px);
+    }
+    #jupiter {
+        height: 35px;
+        width: 33.5px;
+        transform: translate(120px, 110px);
+    }
+}
+
+
+/* ===medium mobile and smaller=== */
+
+@media only screen and (max-width: 425px) {
+    #ad>h2 {
+        font-size: 7.4vw;
+    }
+    #a-desc {
+        font-size: 4vw;
+    }
+    .external-about>h2 {
+        font-size: 5.8vw;
+    }
+    #about-button {
+        font-size: 5vw;
+        width: 50%;
+    }
+    #thumb {
+        width: 40px;
+        height: 40px;
+    }
+    .modal-content {
+        width: 100%;
+        height: 600px;
+    }
+    #ot-mobile {
+        z-index: 2;
+        width: 100%;
+        top: 138%;
+    }
+}

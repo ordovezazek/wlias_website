@@ -159,6 +159,7 @@ class StoreAreaOrderable(Orderable):
 class Design(models.Model):
     design_name = models.CharField(max_length=100)
     story = models.CharField(max_length=1000)
+    description = RichTextField()
     order_link = models.CharField(
         max_length=500,
         blank=True
@@ -182,6 +183,7 @@ class Design(models.Model):
 
         FieldPanel("design_name"),
         FieldPanel("story"),
+        FieldPanel("description"),
         ImageChooserPanel("display"),
         ImageChooserPanel("product"),
         FieldPanel('order_link'),
