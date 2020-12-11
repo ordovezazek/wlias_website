@@ -44,7 +44,13 @@ class HomePage(Page):
         related_name="+",
     )
 
-    about = RichTextField()
+    brandDescription = RichTextField()
+    serviceDescription = RichTextField()
+
+    invitation = models.CharField(
+        max_length=500,
+        blank=True
+    )
 
     content_panels = Page.content_panels + [
 
@@ -58,7 +64,9 @@ class HomePage(Page):
             ],
             heading="Frame 1"
         ),
-        FieldPanel('about'),
+        FieldPanel('brandDescription'),
+        FieldPanel('serviceDescription'),
+        FieldPanel('invitation'),
     ]
         
 

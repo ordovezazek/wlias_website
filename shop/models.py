@@ -27,7 +27,7 @@ from wagtail.admin.edit_handlers import (
 )
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from wagtail.search.models import Query
+from wagtail.search.models import Query 
 
 # from artists.models import 
  
