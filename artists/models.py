@@ -77,36 +77,36 @@ class ArtistAreaOrderable(Orderable):
     ]
 
 class Artist(ClusterableModel):
-    artist_name = models.CharField(max_length=100)
-    caption = models.CharField(max_length=1000)
-    works = models.CharField(max_length=1000)
-    boxcap = models.CharField(max_length=1000)
+    artist_name = models.CharField(max_length=100, blank=True,)
+    caption = models.CharField(max_length=1000, blank=True,)
+    works = models.CharField(max_length=1000, blank=True,)
+    boxcap = models.CharField(max_length=1000, blank=True,)
     profile = models.ForeignKey(
         "wagtailimages.Image",
         on_delete=models.SET_NULL,
         null=True,
-        blank=False,
+        blank=True,
         related_name="+",
     )
     moon = models.ForeignKey(
         "wagtailimages.Image",
         on_delete=models.SET_NULL,
         null=True,
-        blank=False,
+        blank=True,
         related_name="+",
     )
     mars = models.ForeignKey(
         "wagtailimages.Image",
         on_delete=models.SET_NULL,
         null=True,
-        blank=False,
+        blank=True,
         related_name="+",
     )
     jupiter = models.ForeignKey(
         "wagtailimages.Image",
         on_delete=models.SET_NULL,
         null=True,
-        blank=False,
+        blank=True,
         related_name="+",
     )
 
@@ -157,9 +157,9 @@ class StoreAreaOrderable(Orderable):
     ]
 
 class Design(models.Model):
-    design_name = models.CharField(max_length=100)
-    story = models.CharField(max_length=1000)
-    description = RichTextField()
+    design_name = models.CharField(max_length=100, blank=True)
+    story = models.CharField(max_length=1000, blank=True,)
+    description = RichTextField(blank=True,)
     order_link = models.CharField(
         max_length=500,
         blank=True
@@ -168,14 +168,14 @@ class Design(models.Model):
         "wagtailimages.Image",
         on_delete=models.SET_NULL,
         null=True,
-        blank=False,
+        blank=True,
         related_name="+",
     )
     product = models.ForeignKey(
         "wagtailimages.Image",
         on_delete=models.SET_NULL,
         null=True,
-        blank=False,
+        blank=True,
         related_name="+",
     )
 

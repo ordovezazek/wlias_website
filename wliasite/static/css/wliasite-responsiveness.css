@@ -149,7 +149,7 @@ Medium mobile and smaller
     }
     .about-container {
         flex-direction: column;
-        margin-top: 50px;
+        margin: 0 auto 50px;
         padding: 0 6vw;
     }
     #ad {
@@ -165,7 +165,7 @@ Medium mobile and smaller
         font-size: 2.5vw;
     }
     .external-about {
-        margin-bottom: 40px;
+        /* margin-bottom: 40px; */
     }
     .external-about>h2 {
         font-size: 3.8vw;
@@ -175,7 +175,7 @@ Medium mobile and smaller
         font-size: 4vw;
     }
     .social {
-        margin-top: 50px;
+        /* margin-top: 50px; */
         font-size: 2rem;
     }
     /* .social>a {
@@ -331,7 +331,7 @@ Medium mobile and smaller
 
 @media (max-width:1440px) and (min-width: 768px) {
     #feature {
-        margin-top: 10vh;
+        /* margin-top: 10vh; */
     }
     #order-text {
         height: 5vh;
@@ -435,7 +435,7 @@ Medium mobile and smaller
         transform: translate(0, 100px);
     }
     #feature {
-        margin-top: 16vh;
+        /* margin-top: 16vh; */
     }
     /* frame2 */
     #ad>h2 {
@@ -454,7 +454,7 @@ Medium mobile and smaller
         width: 50%;
     }
     .social {
-        margin-top: 50px;
+        /* margin-top: 50px; */
         font-size: 2rem;
     }
     /* ======/landing====== */

@@ -20,32 +20,32 @@ class HomePage(Page):
 
     max_count = 1
 
-    collection_name = models.TextField(null=True)
+    collection_name = models.TextField(null=True, blank=True)
 
     section1 = models.ForeignKey(
         "wagtailimages.Image",
         on_delete=models.SET_NULL,
         null=True,
-        blank=False,
+        blank=True,
         related_name="+",
     )
     section1_mobile = models.ForeignKey(
         "wagtailimages.Image",
         on_delete=models.SET_NULL,
         null=True,
-        blank=False,
+        blank=True,
         related_name="+",
     )
     section2 = models.ForeignKey(
         "wagtailimages.Image",
         on_delete=models.SET_NULL,
         null=True,
-        blank=False,
+        blank=True,
         related_name="+",
     )
 
-    brandDescription = RichTextField()
-    serviceDescription = RichTextField()
+    brandDescription = RichTextField(blank=True)
+    serviceDescription = RichTextField(blank=True)
 
     invitation = models.CharField(
         max_length=500,

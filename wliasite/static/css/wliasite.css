@@ -32,7 +32,8 @@ Shop Page 489
 /* ======nav====== */
 
 nav {
-    margin: 0 0 164px;
+    /* margin: 0 0 164px; */
+    margin: 0 0 0;
     background-color: white;
 }
 
@@ -92,13 +93,16 @@ nav>a {
     z-index: 3;
     width: 100%;
     height: 50px;
-    transform: translate(0px, 81vh);
+    transform: translate(0px, 80.5vh);
     text-align: center;
 }
 
 .upnav {
     position: relative;
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    /* margin-right: 10; */
+    float: right;
+    right: 5vw;
     width: 50px;
     height: 50px;
     text-align: center;
@@ -121,6 +125,7 @@ nav>a {
 
 .head-container {
     position: relative;
+    z-index: 3;
     height: 100px;
     padding-top: 0px;
 }
@@ -211,11 +216,30 @@ nav>a {
     text-align: left;
 }
 
+.porder-container{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    margin-top: 70vh;
+}
+
+#porder-button{
+    margin-left: 60vw;
+    padding: 2vh 2vw;
+    border-radius: 10px;
+    box-shadow: 2px 2px gray;
+    font-size: 2vw;
+    text-decoration: underline;
+    color: rgb(157 210 250);
+    background-color: white;
+    
+}
+
 .feature-collage {
     width: 100%;
     /* height: auto; */
     height: fit-content;
-    background-color: #411CD6;
+    /* background-color: #411CD6; */
 }
 
 .feature-collage>img {
@@ -253,7 +277,7 @@ nav>a {
     height: fit-content;
     width: 100%;
     text-align: center;
-    background-color: #411CD6;
+    background-color: white;
     margin-top: -3.8vh;
     /* overflow: hidden; */
     display: flex;
@@ -293,6 +317,7 @@ nav>a {
     height: fit-content;
     padding: 0 53.1px 0 0;
     text-align: left;
+    color: rgb(21 20 23);
 }
 
 #ad>h2 {
@@ -300,24 +325,38 @@ nav>a {
     margin-bottom: 20px;
 }
 
+.adI{
+    
+}
+
+.adII{
+    margin-top: 15vh;
+}
+
+
 #a-desc {
     font-size: 1.2vw;
     width: 100%;
     padding: 40.6px;
-    background-color: rgba(16, 0, 80, 0.3);
+    color: white;
+    background-color: rgb(83 83 83);
 }
 
 .external-about {
     width: 100%;
+    height: fit-content;
+    background-color: black;
 }
 
 .external-about>h2 {
+    
     font-size: 2.8vw;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    
 }
 
 #about-button>a {
-    color: #411CD6;
+    color: black;
 }
 
 #about-button>a>p {
@@ -342,7 +381,7 @@ nav>a {
     position: relative;
     width: 100%;
     height: fit-content;
-    margin: 100px auto 0;
+    margin: 0px auto 0;
     padding: 25px 0 25px;
     text-align: center;
     font-size: 3rem;
