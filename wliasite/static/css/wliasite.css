@@ -301,11 +301,36 @@ nav>a {
     background-color: black;
 }
 
+.about-logo-container{
+
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 111%;
+}
+
+.about-logo{
+    width: 100%;
+}
+
+.about-logo>img{
+    width: 70vh;
+    height: auto;
+}
+
+#alI>img{
+    transform: rotate(90deg) translate(37vh,-48vw);
+}
+
+#alII>img{
+    transform: translate(-35.5vw,55vh);
+}
+
 .about-container {
     position: relative;
     height: fit-content;
     padding: 0% 3vw 0 6vw;
-    margin: 100px 0;
+    margin: 100px 0 200px;
     display: flex;
     flex-direction: row;
     /* text-align: center; */
@@ -344,6 +369,7 @@ nav>a {
 
 .external-about {
     width: 100%;
+    z-index: 1;
     height: fit-content;
     background-color: black;
 }
@@ -379,6 +405,7 @@ nav>a {
 
 .social {
     position: relative;
+    z-index: 1;
     width: 100%;
     height: fit-content;
     margin: 0px auto 0;
