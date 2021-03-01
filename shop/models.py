@@ -11,11 +11,14 @@ from wagtail.snippets.edit_handlers import SnippetChooserPanel
 from wagtail.core.models import Page, Orderable, Collection
 from wagtail.core.fields import RichTextField, StreamField
 
+from wagtail.contrib.routable_page.models import RoutablePageMixin, route
+
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.images.blocks import ImageChooserBlock
  
 from wagtail.core import blocks
 from django_extensions.db.fields import AutoSlugField
+from django.shortcuts import render
 
 from wagtail.admin.edit_handlers import (
     FieldPanel,
@@ -29,33 +32,45 @@ from wagtail.admin.edit_handlers import (
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from wagtail.search.models import Query 
 
-# from artists.models import 
+from artists.models import Design
  
+class ShopPageOrderable(Orderable):
+    
+    page = ParentalKey("shop.ShopPage", related_name="collections")
+    collection = models.ForeignKey(
+        "wlias_collections.Collection",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True
+    )
+
+    panels = [
+        SnippetChooserPanel("collection"),
+    ]
 
 class ShopPage(Page):
     template = 'shop/shop.html'
 
     max_count = 1
 
-    collection = models.CharField(max_length=1000)
-
     content_panels = Page.content_panels + [
 
-                
+        
         MultiFieldPanel(
                 [
-                    FieldPanel("collection"),
+                    InlinePanel("collections", label="Collections", min_num=1, max_num=100)
                 ],
-                heading="Collection Heading",
-        ),
-        MultiFieldPanel(
-                [
-                    InlinePanel("designs", label="Products", min_num=1, max_num=100),
-                ],
-                heading="Shop Products",
+                heading="Shop Collections",
         ),
     ]
 
+    def child_pages(self):
+        return ProductPageSpecific.objects.live().child_of(self)
+
+    def children(self):
+        return self.get_children().specific().live()
+
+  
     #sets slug
     def full_clean(self, *args, **kwargs):
         # super(HomePage, self).full_clean(*args, **kwargs)
@@ -63,22 +78,48 @@ class ShopPage(Page):
         if not self.slug.startswith('shop'):
             self.slug = 'shop'
 
-    # def get_context(self, request):
-    #     context = super(ShopPage, self).get_context(request)
-    #     context['products'] = self.designs.all()
 
-    #     return context
+class ProductPageSpecific(Page):
+    template = "artists/product_specific.html"
 
-class ShopPageOrderable(Orderable):
-    
-    page = ParentalKey("shop.ShopPage", related_name="designs")
     product = models.ForeignKey(
         "artists.Design",
-        on_delete=models.CASCADE,
+        on_delete=models.SET_NULL,
         blank=True,
-        null=True
+        null=True,
+        verbose_name= "Design"
     )
 
-    panels = [
-        SnippetChooserPanel("product"),
+    # title = models.CharField(max_length=100, blank=True)
+    # description = RichTextField(blank=True,)
+    # thumbnail = models.ForeignKey(
+    #     "wagtailimages.Image",
+    #     on_delete=models.SET_NULL,
+    #     null=True,
+    #     blank=True,
+    #     related_name="+",
+    # )
+
+    content_panels = Page.content_panels + [
+        
+        # FieldPanel("title"),
+        # FieldPanel("description"),
+        # ImageChooserPanel("thumbnail"),
+
+        MultiFieldPanel(
+                [
+                    SnippetChooserPanel("product")
+                ],
+                heading="Assign Design",
+        ),
+
     ]
+
+
+    #sets slug
+    def full_clean(self, *args, **kwargs):
+        # super(HomePage, self).full_clean(*args, **kwargs)
+
+        if not self.slug.startswith(self.product.design_name):
+            self.slug = self.product.design_name
+

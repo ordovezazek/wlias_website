@@ -78,22 +78,26 @@ class ArtistAreaOrderable(Orderable):
 
 class Artist(ClusterableModel):
     artist_name = models.CharField(max_length=100, blank=True,)
+    social_link = models.CharField(max_length=1000, blank=True,)
+
     caption = models.CharField(max_length=1000, blank=True,)
     works = models.CharField(max_length=1000, blank=True,)
     boxcap = models.CharField(max_length=1000, blank=True,)
+
     profile = models.ForeignKey(
         "wagtailimages.Image",
         on_delete=models.SET_NULL,
         null=True,
-        blank=True,
         related_name="+",
+        verbose_name="Profile Picture (Sun)"
     )
+
     moon = models.ForeignKey(
         "wagtailimages.Image",
         on_delete=models.SET_NULL,
         null=True,
-        blank=True,
         related_name="+",
+        verbose_name="Moon Picture"
     )
     mars = models.ForeignKey(
         "wagtailimages.Image",
@@ -101,6 +105,7 @@ class Artist(ClusterableModel):
         null=True,
         blank=True,
         related_name="+",
+        verbose_name="Rising Picture"
     )
     jupiter = models.ForeignKey(
         "wagtailimages.Image",
@@ -108,6 +113,7 @@ class Artist(ClusterableModel):
         null=True,
         blank=True,
         related_name="+",
+        verbose_name="Venus Picture"
     )
 
     panels = [
@@ -115,21 +121,31 @@ class Artist(ClusterableModel):
         MultiFieldPanel(
             [
                 FieldPanel('artist_name'),
+                FieldPanel('social_link'),
+
+
                 FieldPanel('caption'),
                 FieldPanel('works'),
                 FieldPanel('boxcap'),
+            ],
+            heading="Artist Details",
+        ),
+
+        MultiFieldPanel(
+            [
                 ImageChooserPanel("profile"),
                 ImageChooserPanel("moon"),
                 ImageChooserPanel("mars"),
                 ImageChooserPanel("jupiter"),
             ],
-            heading="Artist Block",
+            heading="Artist Visuals",
         ),
+
         MultiFieldPanel(
             [
                 InlinePanel("designs", label="Design", min_num=1, max_num=100),
             ],
-            heading="Artist Store",
+            heading="Artist Designs",
         ),
     ]
 
@@ -151,42 +167,87 @@ class StoreAreaOrderable(Orderable):
         blank=True,
         null=True
     )
-
+ 
     panels = [
         SnippetChooserPanel("designDeets"),
     ]
 
 class Design(models.Model):
-    design_name = models.CharField(max_length=100, blank=True)
-    story = models.CharField(max_length=1000, blank=True,)
+    design_name = models.CharField(max_length=100, blank=True, verbose_name="Design Title")
+    creator = models.CharField(max_length=100, blank=True, verbose_name="Creator")
+    story = RichTextField(blank=True,)
     description = RichTextField(blank=True,)
-    order_link = models.CharField(
-        max_length=500,
-        blank=True
+    price = models.IntegerField(null=True, blank=True)
+    currency = models.CharField(max_length=100, blank=True,)
+    order_status = models.CharField(max_length=1000, blank=True, verbose_name="Order Button Text")
+    order_link = models.CharField(max_length=500, blank=True)
+    form_embed_link = models.CharField(max_length=500)
+    form_height = models.CharField(max_length=500, blank=True)
+
+    display = StreamField([
+        ('image', ImageChooserBlock())
+    ],
+    blank=True,
+    null=True,
+    verbose_name="Display Images"
     )
-    display = models.ForeignKey(
-        "wagtailimages.Image",
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
-        related_name="+",
+
+    product = StreamField([
+        ('image', ImageChooserBlock())
+    ],
+    blank=True,
+    null=True,
+    verbose_name="Product Images"
     )
-    product = models.ForeignKey(
-        "wagtailimages.Image",
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
-        related_name="+",
-    )
+
+    # product = models.ForeignKey(
+    #     "wagtailimages.Image",
+    #     on_delete=models.SET_NULL,
+    #     null=True,
+    #     blank=True,
+    #     related_name="+",
+    #     verbose_name="Product Image"
+    # )
 
     panels = [
 
-        FieldPanel("design_name"),
-        FieldPanel("story"),
-        FieldPanel("description"),
-        ImageChooserPanel("display"),
-        ImageChooserPanel("product"),
-        FieldPanel('order_link'),
+        
+
+        MultiFieldPanel(
+                [
+                    FieldPanel("design_name"),
+                    FieldPanel("creator"),
+                    FieldPanel("description"),
+                    FieldPanel("story"),
+                    
+                ],
+                heading="Design Details",
+        ),
+
+        MultiFieldPanel(
+                [
+                    StreamFieldPanel("display"),
+                    StreamFieldPanel("product"),
+                    
+                ],
+                heading="Design Visuals",
+        ),
+        
+
+        MultiFieldPanel(
+                [
+                    FieldPanel('price'),
+                    FieldPanel('currency'),
+                    FieldPanel('order_status'),
+                    FieldPanel('order_link'),
+                    FieldPanel('form_embed_link'),
+                    FieldPanel('form_height'),
+                ],
+                heading="Ordering Details",
+        ),
+        
+        
+        
     ]
 
     @property

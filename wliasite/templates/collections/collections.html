@@ -15,20 +15,59 @@
         <nav class="nav1" id="nav1">
             <a class="navlink" href="{% slugurl 'home' %}" id="navlink1">home</a>
             <a class="navlink" href="{% slugurl 'home' %}" id="navlink1">about us</a>
-            <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2">artists</a>
+            {% comment %} <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2">artists</a> {% endcomment %}
             <a class="navlink" href="{% slugurl 'shop' %}" id="navlink2">shop</a>
-            {% comment %} <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3">collections</a> {% endcomment %}
-            <a class="navlink" href="{% slugurl 'home' %}" id="navlink3" style="border-color: #001DB8;">collections</a>
+            <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3" style="border-color: #001DB8;">collections</a>
+
         </nav>
         <nav class="nav2 flex-column">
-            <a class="navlink" href="{% slugurl 'home' %}" id="navlink1">home</a>
-            <a class="navlink" href="{% slugurl 'home' %}" id="navlink1">about us</a>
-            <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2">artists</a>
-            <a class="navlink" href="{% slugurl 'shop' %}" id="navlink2">shop</a>
-            {% comment %} <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3">collections</a> {% endcomment %}
-            <a class="navlink" href="{% slugurl 'home' %}" id="navlink3" style="border-color: #001DB8;">collections</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item navlink active">
+                        <a href="{% slugurl 'home' %}" id="navlink1">home</a>
+                    </li>
+                    <li class="nav-item navlink">
+                        <a href="{% slugurl 'home' %}#about" id="navlink1">about us</a>
+                    </li>
+                    {% comment %} <li class="nav-item">
+                        <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2">artists</a>
+                    </li> {% endcomment %}
+                    <li class="nav-item navlink">
+                        <a href="{% slugurl 'shop' %}" id="navlink2">shop</a>
+                    </li>
+                    <li class="nav-item navlink" style="border-color: #001DB8;">
+                        <a href="{% slugurl 'collections' %}" id="navlink3">collections</a>
+                    </li>
+                </ul>
+ 
+            </div>
+            {% comment %} <a href="#navig" id="upnav"><div class="upnav"><i class="fa fa-arrow-up" aria-hidden="true"></i><div></a> {% endcomment %}
+            {% comment %} <div id="upnav-container"><a href="#navig" id="upnav"><div class="upnav"><i class="fa fa-arrow-up" aria-hidden="true"></i><div></a></div> {% endcomment %}
+        
         </nav>
     </div>
+
+<div class="collections-container" style="background-image:url({% static 'assets/Collections-Background.png' %});">
+    {% for collection in collections %}
+    <a href="{% pageurl collection %}">
+        <div class="collection-box">
+            {% image collection.collection.thumbnail max-1000x1000 as CImg %}
+            <div class="collection-cover">
+                <img src="{{ CImg.url }}">
+            </div>
+            <div class="collection-details">
+                <span style="color:{{ collection.collection.collection_color }}">{{ collection }}</span>
+                <span>view</span>
+            </div>
+        </div>
+    </a>
+        
+    {% endfor %}
+</div>
 
 
 {% endblock %}

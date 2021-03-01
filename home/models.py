@@ -17,10 +17,13 @@ from wagtail.images.blocks import ImageChooserBlock
 
 class HomePage(Page):
     template = 'home/landing.html'
-
     max_count = 1
-
-    collection_name = models.TextField(null=True, blank=True)
+    brandDescription = RichTextField(blank=True, verbose_name="Brand Description")
+    serviceDescription = RichTextField(blank=True, verbose_name="Service Description")
+    about_link = models.CharField(
+        max_length=500,
+        blank=True
+    )
 
     section1 = models.ForeignKey(
         "wagtailimages.Image",
@@ -28,6 +31,7 @@ class HomePage(Page):
         null=True,
         blank=True,
         related_name="+",
+        verbose_name="Section 1 (image)"
     )
     section1_mobile = models.ForeignKey(
         "wagtailimages.Image",
@@ -35,6 +39,7 @@ class HomePage(Page):
         null=True,
         blank=True,
         related_name="+",
+        verbose_name="Section 1 Mobile (image)"
     )
     section2 = models.ForeignKey(
         "wagtailimages.Image",
@@ -42,31 +47,29 @@ class HomePage(Page):
         null=True,
         blank=True,
         related_name="+",
+        verbose_name="Section 2 (image)"
     )
-
-    brandDescription = RichTextField(blank=True)
-    serviceDescription = RichTextField(blank=True)
 
     invitation = models.CharField(
         max_length=500,
-        blank=True
+        blank=True,
+        verbose_name="Invitation Message"
     )
 
     content_panels = Page.content_panels + [
 
         MultiFieldPanel(
             [
-                FieldPanel("collection_name"),
                 ImageChooserPanel("section1"),
                 ImageChooserPanel("section1_mobile"),
                 ImageChooserPanel("section2"),
-                # ImageChooserPanel("img3"),
             ],
-            heading="Frame 1"
+            heading="Home Page Display"
         ),
         FieldPanel('brandDescription'),
         FieldPanel('serviceDescription'),
         FieldPanel('invitation'),
+        FieldPanel('about_link'),
     ]
         
 

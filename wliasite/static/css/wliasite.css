@@ -33,7 +33,7 @@ Shop Page 489
 
 nav {
     /* margin: 0 0 164px; */
-    margin: 0 0 0;
+    margin: -1px 0 0;
     background-color: white;
 }
 
@@ -43,16 +43,45 @@ nav>a {
 
 .nav1 {
     position: fixed;
-    z-index: 2;
+    z-index: 12;
     width: 100%;
-    height: 70px;
-    padding: 20px 5%;
+    height: 71px;
+    padding: 21px 5%;
     display: inline;
 }
 
 .nav2 {
+    z-index: 12;
     display: none;
-    text-align: center;
+    position: fixed;
+    width: 100%;
+    padding: 15px 20px;
+    text-align: right;
+
+}
+
+#navig{
+    z-index: 12;
+}
+
+.navbar-toggler{
+    /* width: fit-content !important; */
+}
+
+.navbar-toggler:focus{
+    outline: none !important;
+}
+
+.navbar-toggler>i{
+    font-size: 7vw !important;
+    float: right;
+}
+
+#navbarColor01{
+    padding-top: 6vh;
+    height: 40%;
+
+
 }
 
 
@@ -61,14 +90,25 @@ nav>a {
 } */
 
 .navlink {
-    margin: 8px 5.4% 44px 0;
-    width: 30px;
-    padding-left: none !important;
+    margin: 8px 5.4% 6vh 0;
+    width: fit-content;
     font-weight: normal;
     line-height: 16px;
     color: black;
     padding-bottom: 10px;
     border-bottom: 4.5px solid transparent;
+}
+
+.navlink:hover{
+    color: #411CD6;
+}
+
+.navlink>a {
+    color: black;
+}
+
+.navlink>a:hover {
+    text-decoration: none !important;
 }
 
 #navlink1 {
@@ -118,14 +158,13 @@ nav>a {
 }
 
 .navlink:hover {
-    color: black;
     text-decoration: none;
     color: #411CD6;
 }
 
 .head-container {
     position: relative;
-    z-index: 3;
+    z-index: 12;
     height: 100px;
     padding-top: 0px;
 }
@@ -133,6 +172,11 @@ nav>a {
 
 /* ======/nav====== */
 
+.rich-text{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
 
 /* ======landing====== */
 
@@ -217,17 +261,19 @@ nav>a {
 }
 
 .porder-container{
-    position: absolute;
     z-index: 2;
     width: 100%;
-    margin-top: 70vh;
+    height: fit-content;
+    text-align: center;
+    padding: 6vh 0 4vh;
+
 }
 
 #porder-button{
-    margin-left: 60vw;
     padding: 2vh 2vw;
     border-radius: 10px;
-    box-shadow: 2px 2px gray;
+    border: 3px dashed black;
+    /* box-shadow: 2px 2px 2px 2px gray; */
     font-size: 2vw;
     text-decoration: underline;
     color: rgb(157 210 250);
@@ -251,7 +297,7 @@ nav>a {
     width: 100%;
     /* height: auto; */
     height: fit-content;
-    background-color: #411CD6;
+    /* background-color: #411CD6; */
     overflow: hidden;
 }
 
@@ -278,7 +324,7 @@ nav>a {
     width: 100%;
     text-align: center;
     background-color: white;
-    margin-top: -3.8vh;
+    /* margin-top: -3.8vh; */
     /* overflow: hidden; */
     display: flex;
     flex-direction: column;
@@ -348,6 +394,8 @@ nav>a {
 #ad>h2 {
     font-size: 3.1vw;
     margin-bottom: 20px;
+    background-color: white;
+    width: fit-content;
 }
 
 .adI{
@@ -390,11 +438,11 @@ nav>a {
 }
 
 #about-button {
-    width: 25%;
+    width: 20%;
     height: fit-content;
     margin: 0 auto;
     padding: 5px;
-    font-size: 3.5vw;
+    font-size: 3vw;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
@@ -507,12 +555,33 @@ nav>a {
 
 /* modal */
 
+.modal-dialog{
+    max-width: 100% !important;
+    margin: 0 0 !important;
+}
+
+
 .modal-content {
-    display: flex;
-    flex-direction: row;
-    height: 651px;
-    margin: 135px auto auto;
-    padding: 72px 79px 0;
+    display: grid;
+    bottom: 0;
+    height: fit-content !important;
+    margin: 0 auto auto !important;
+    padding: 3vw 3vw 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    overflow-y: scroll;
+    
+}
+
+#modal-exit-button{
+    position: fixed;
+    background-color:black;
+    color: white;
+    z-index: 4;
+    width: fit-content !important;
+    padding: 0.9vw;
+
+
 }
 
 .modal-content>a {
@@ -689,32 +758,47 @@ nav>a {
 
 .heading {
     width: 90vw;
-    background-color: #411CD6;
+    background-color: black;
+    /* background-color: #411CD6; */
     color: white;
     padding: 6px 12px 6px;
     margin: 36px auto 0;
+    font-size: 2.5vh;
 }
 
 .shop-container {
-    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* gap: 4em; */
+    width: 100%;
     z-index: 1;
-    display: flex;
-    flex-direction: row;
     width: 90vw;
     height: auto;
-    margin: 0 auto;
+    margin: 0 auto 6vh;
     /* overflow: hidden; */
     background-color: white;
+}
+
+.shop-container-mobile{
+    display:none;
 }
 
 .shop-elements {
     width: 100%;
     height: auto;
-    margin: 0 0 12vh;
+    margin: 0 0 0vh;
+    border-bottom: 2vh solid black;
     /* background-color: #411CD6; */
 }
 
 #prod-img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 3;
+}
+
+#prod-img-inner {
     position: relative;
     width: 100%;
     height: auto;
@@ -732,12 +816,152 @@ nav>a {
     opacity: 0;
 }
 
+#product-modal:hover {
+    opacity: 0;
+}
+
+#carousel-controls, #carousel-controls-inner{
+    z-index: 5;
+    background-color: black;
+    opacity: 1 !important;
+    width: fit-content; 
+    height: fit-content;
+    padding: 3vw;
+    border-radius: 360px;
+    margin: auto 10px;
+
+}
+
+#carousel-controls-inner{
+
+    padding: 1vw;
+    margin: auto 40px;
+
+}
+
+#carousel-controls-inner>span{
+
+}
+
+#carousel-controls-artist{
+    z-index: 3;
+    background-color: gray;
+    opacity: 1 !important;
+    width: fit-content; 
+    height: fit-content;
+    padding: 3vw;
+    border-radius: 360px;
+    margin: auto 10px;
+
+}
+
 #order-container {
     position: relative;
     width: 100%;
     height: auto;
-    background-size: cover !important;
+    background-size: contain !important;
     overflow: hidden;
+}
+
+.product-modal{
+    position: absolute !important;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    padding: 0 !important;
+    border: none !important;
+    background-size: cover !important;
+}
+.product-modal:hover{
+    opacity: 0;
+}
+
+.product-modal:focus {
+    outline: 0 !important;
+}
+
+#order-container>.modal{
+    margin-top: 70px;
+}
+
+/* .modal-backdrop{
+    display: none;
+    z-index: -1 !important;
+    background-color: red !important;
+    margin-top: 70px;
+} */
+
+.product-element-title{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 2vh 0 4vh;
+
+}
+
+.product-element-container1{
+    margin: 2.5vh 0;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    padding-bottom: 5vh;
+}
+
+.product-element-container2{
+    /* margin: 2.5vh 0; */
+    background-color: white;
+    padding-bottom: 20vh;
+}
+
+.product-element-assets{
+    width: 50%;
+    height: fit-content;
+    
+    /* overflow: hidden; */
+}
+
+.product-element-assets>span{
+    width: 100%;
+    text-align: center;
+}
+
+.product-element-assets>span>h1{
+    padding: 5vh 0 0;
+}
+
+.product-display{
+    text-align: center;
+}
+
+.prod-img-inner{
+    width: 70% !important;
+    margin: 0 auto;
+    border: 3px solid black;
+}
+
+.prod-img-inner:hover{
+    opacity: 1 !important;
+}
+
+.product-details{
+
+}
+
+.product-element-order{
+    width: 50%;
+    height: 49vw;
+    overflow: hidden;
+    border: 5px solid black;
+}
+
+.product-element-order-title{
+    text-align: center;
+    width: 100%;
+    padding: 2vh;
+    background-color: black;
+    font-size: 2vw;
+    color: white
 }
 
 .button-container {
@@ -751,21 +975,28 @@ nav>a {
 }
 
 #order-box {
+    position: relative;
     width: 100%;
     height: fit-content;
-    font-size: 100%;
     text-align: center;
-    margin-top: 15vh;
+    padding: 4% 0;
+    white-space: nowrap;
 }
 
 #prod-name {
     height: fit-content;
-    font-size: 1.5vw;
-    color: #411CD6;
+    width: 100%;
+    color: black;
     text-align: center;
     padding: 0 10px;
     margin: 4vh 0;
     text-align: center;
+}
+
+#prod-name>h3{
+    word-spacing: 0.4vw;
+    font-size: 1.3vw;
+    margin-bottom: 0;
 }
 
 #prod-desc {
@@ -776,12 +1007,13 @@ nav>a {
 
 #order-button {
     position: absolute;
-    width: 170px;
+    width: fit-content;
     height: fit-content;
-    padding-top: 10px;
+    padding: 10px 20px 0;
     margin-bottom: 4vh;
     transform: translate(-50%, -150%);
     font-size: 150%;
+    word-spacing: 4px;
     color: white;
     background-color: black;
     border-radius: 10px;
@@ -790,3 +1022,115 @@ nav>a {
 
 
 /* ======/shop====== */
+
+/* ======collection====== */
+
+.collections-container{
+    /* background-color: rgb(184, 184, 184); */
+    display: grid;
+    gap: 4em;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-auto-rows: fit-content; */
+    width: 100%;
+    height: fit-content;
+    margin: -4em 0;
+    padding: 2em;
+    border: solid white;
+    border-width: 5vh 5vw 0;
+    background-size: cover;
+    background-repeat: repeat-y;
+}
+
+.collections-container>a:hover{
+    text-decoration: none;
+    
+}
+
+.collections-container>a:hover .collection-cover>img{
+    opacity: 0.6;
+}
+
+.collection-box{
+    height: fit-content;
+    width: 100%;
+    text-align: center;
+
+}
+
+.collection-cover{
+    width: 100%;
+    /* height: 60vh; */
+    height: fit-content;
+}
+
+.collection-cover>img{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.collection-details{
+    font-size: 110%;
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0 0;
+}
+
+.collection-details>span:nth-child(2){
+    color: black;
+    text-decoration: underline;
+}
+
+/* ======/collection====== */
+
+/* ======collection-specific====== */
+
+.title-container{
+    width: 100%;
+    text-align: center;
+    margin: 2vh 0 6vh;
+}
+
+.title-text{
+    white-space: nowrap;
+    font-size: 3.5vw;
+}
+
+.collection-specific-description{
+    height: fit-content;
+    padding: 0 8vw 8vw;
+    color: black;
+    text-align: justify;
+}
+
+.collection-specific-description>h1{
+    margin-bottom: 2vh;
+}
+
+.collection-specific-artists{
+    width: 100%;
+    height: fit-content;
+    padding: 0 8vw 8vw;
+    color: black;
+    text-align: justify;
+}
+
+.collection-specific-artists>h1{
+    color: black;
+    margin-bottom: 6vh;
+}
+
+.collection-specific-designs{
+    width: 100%;
+    height: fit-content;
+    padding: 0 8vw 4vw;
+    color: black;
+    text-align: justify;
+}
+
+.collection-specific-designs>h1{
+    color: black;
+    margin-bottom: 6vh;
+}
+
+/* ======/collection-specific====== */

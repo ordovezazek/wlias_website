@@ -91,10 +91,9 @@ Medium mobile and smaller
 
 /* ===tablets=== */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 769px) {
     .head-container {
         height: fit-content;
-        margin-bottom: 11vh;
     }
     nav {
         margin: 0 0 0;
@@ -104,27 +103,17 @@ Medium mobile and smaller
         display: none;
     }
     .nav2 {
-        top: 0;
         display: flex;
-        /* padding-bottom: 20px */
+        padding-top: 20px;
+        padding-bottom: 20px
     }
     .navlink {
-        margin-left: auto;
-        text-align: right;
-        padding-bottom: 3vw;
+        margin: 4% auto 4%;
+        text-align: center;
     }
-    .navbar-toggler{
-        padding: .25rem 4vw !important;
+    #upnav-container {
+        transform: translate(0px, 81vh);
     }
-    .navbar-toggler>i{
-        font-size: 5vw !important;
-        float: right;
-    }
-
-    .navbar-nav{
-        font-size: 5vw;
-    }
-
     .logo-container {
         align-content: center;
     }
@@ -141,17 +130,6 @@ Medium mobile and smaller
     .feature-mobile {
         height: fit-content;
     }
-
-    .porder-container{
-        padding: 4vh 0 2vh;
-        height: fit-content;
-
-    }
-
-    #porder-button{
-        font-size: 3vw;
-    }
-
     .feature-imgs {
         flex-direction: column;
         margin-bottom: 10%;
@@ -174,7 +152,7 @@ Medium mobile and smaller
     }
     .about-container {
         flex-direction: column;
-        margin: 0 auto 50px;
+        margin-top: 50px;
         padding: 0 6vw;
     }
     #ad {
@@ -190,7 +168,7 @@ Medium mobile and smaller
         font-size: 2.5vw;
     }
     .external-about {
-        /* margin-bottom: 40px; */
+        margin-bottom: 40px;
     }
     .external-about>h2 {
         font-size: 3.8vw;
@@ -200,7 +178,7 @@ Medium mobile and smaller
         font-size: 4vw;
     }
     .social {
-        /* margin-top: 50px; */
+        margin-top: 50px;
         font-size: 2rem;
     }
     /* .social>a {
@@ -322,36 +300,10 @@ Medium mobile and smaller
     }
     /* artist-frame2 */
     /* ======shop====== */
-    .heading{
-        width: 90%;
-        height: fit-content;
-        margin: 0 auto;
-        padding: 2vw;
-        font-size: 6vw;
-    }
-
-    .heading>span{
-        margin: 20px auto;
-    }
-
     .shop-container {
-        /* flex-direction: column; */
-        display: none;
+        flex-direction: column;
         background-color: white;
     }
-    .shop-container-mobile{
-        display:block;
-
-        overflow: hidden;
-        margin-bottom: 6vh;
-    } 
-    
-    .shop-container-mobile>div{
-        display:block;
-        width: 100%;
-        margin: 0 auto;
-    } 
-
     .shop-container>a>img {
         width: 60vw;
     }
@@ -362,112 +314,17 @@ Medium mobile and smaller
     .heading {
         text-align: center;
     }
-
-    .scrollspy-example{
-
-        height: fit-content;
-        overflow-x: scroll;
-        display: flex !important;
-        flex-direction: row;
-        z-index: 3;
-    }
-
-    #scrollspy-container{
-        margin:0 15vw;
-        width: fit-content;
-        height: fit-content;
-        /* z-index: 3; */
-    }
-
-    #scrollspy-container>a>img{
-        width: auto;
-        height: 90vw;
-    }
-
-    #prod-img:hover {
-        opacity: 1;
-    }
-
-    #prod-name>h3{
-        font-size: 5vw;
-    }
-
     #order-button {
-        /* width: fit-; */
+        width: 50%;
     }
     #order-box {
-        margin-top: 18vh;
-        margin-bottom: 26vh;
+        margin-top: 20vh;
+        margin-bottom: 5vh;
     }
-
-    #modal-exit-button{
-        font-size: 2vw;
-    }
-
-    .product-element-title{
-        padding: 6vh 0 2vh;
-    }
-
-    .product-element-container1{
-        flex-direction: column;
-    }
-
-    .product-element-assets{
-        width: 100%;
-        margin: 0 0 8vh;
-    }
-
-    #carousel-controls-inner{
-        margin: auto 25px;
-    }
-    
-    .product-element-order-mobile{
-        width: 100% !important;
-        /* height: 49vw; */
-        overflow: hidden;
-        padding: 0 20vw;
-        margin-top: -3.5vh;
-        /* border: 5px solid black; */
-    }
-    
-    .product-element-order-button-mobile{
-        text-align: center;
-        width: 100%;
-        padding: 2vh !important;
-        background-color: black !important;
-        font-size: 4vw !important;
-        color: white !important;
-    }
-
-
+}
 
 
 /* ======/shop====== */
-
-/* ====== collection ======*/
-
-.collections-container{
-    display: flex;
-    flex-direction: column;
-    padding: 5em 3em;
-}
-
-.collection-cover{
-    height: fit-content;
-}
-
-.title-text{
-    font-size: 5.5vw;
-}
-
-
-/* ====== /collection ======*/
-
-}
-
-
-
-
 
 
 /* extra responsiveness fixes */
@@ -477,7 +334,7 @@ Medium mobile and smaller
 
 @media (max-width:1440px) and (min-width: 768px) {
     #feature {
-        /* margin-top: 10vh; */
+        margin-top: 10vh;
     }
     #order-text {
         height: 5vh;
@@ -504,7 +361,6 @@ Medium mobile and smaller
     /* .social>a {
         margin-right: 50px;
     } */
-
 }
 
 
@@ -519,7 +375,7 @@ Medium mobile and smaller
         font-size: 24px;
     }
     #feature {
-        /* margin-top: 20vh; */
+        margin-top: 20vh;
     }
     /* ======/landing====== */
     /* ======/artists====== */
@@ -570,21 +426,6 @@ Medium mobile and smaller
 /* ===large mobile and smaller=== */
 
 @media only screen and (max-width: 500px) {
-    
-
-    .navbar-toggler{
-        padding: .25rem 4vw !important;
-    }
-    .navbar-toggler>i{
-        font-size: 10vw !important;
-        float: right;
-    }
-    .navbar-nav{
-        font-size: 7vw;
-    }
-
-     /* ======/landing====== */
-
     .logo>img {
         width: 200px;
     }
@@ -597,7 +438,7 @@ Medium mobile and smaller
         transform: translate(0, 100px);
     }
     #feature {
-        /* margin-top: 16vh; */
+        margin-top: 16vh;
     }
     /* frame2 */
     #ad>h2 {
@@ -608,11 +449,6 @@ Medium mobile and smaller
         text-align: center;
         font-size: 3vw;
     }
-
-    #porder-button{
-        font-size: 5vw;
-    }
-
     .external-about>h2 {
         font-size: 4.8vw;
     }
@@ -621,13 +457,11 @@ Medium mobile and smaller
         width: 50%;
     }
     .social {
-        /* margin-top: 50px; */
+        margin-top: 50px;
         font-size: 2rem;
     }
-
     /* ======/landing====== */
-
-    /* ====== artists====== */
+    /* ======/artists====== */
     .details>p {
         font-size: 60%;
     }
@@ -678,67 +512,6 @@ Medium mobile and smaller
         width: 33.5px;
         transform: translate(120px, 110px);
     }
-
-    /* ======/artists====== */
-
-    /* ======shop====== */
-
-    .heading{
-        font-size: 7vw;
-    }
-
-    #scrollspy-container {
-        margin: 0;
-        padding: 0 !important;
-    }
-    #scrollspy-container>a>img {
-        width: auto;
-        height: 135vw;
-    }
-
-    #modal-exit-button{
-        font-size: 4vw;
-    }
-
-    #carousel-controls-inner{
-        margin: auto 15px;
-    }
-
-    #prod-name>h3{
-        font-size: 7vw;
-    }
-    
-    /* ======/shop====== */
-
-    /* ======collection====== */
-
-    .collections-container{
-        padding: 5em 1em;
-    }
-    .collection-specific-description{
-        
-    }
-
-    .title-text{
-        font-size: 7.5vw;
-        text-align: center;
-    }
-    
-    .collection-specific-artists{
-
-        padding: 0 4vw 8vw;
-
-    }
-
-    .collection-specific-designs{
-
-        padding: 0 4vw 4vw;
-
-    }
-
-    /* ======/collection====== */
-
-    
 }
 
 
@@ -770,5 +543,53 @@ Medium mobile and smaller
         z-index: 2;
         width: 100%;
         top: 138%;
+    }
+}
+
+@media (min-height: 813px) and (max-height: 823px) {
+    #upnav-container {
+        transform: translate(0px, 76vh);
+    }
+}
+
+@media (min-height: 737px) and (max-height: 812px) {
+    #upnav-container {
+        transform: translate(0px, 75vh);
+    }
+}
+
+@media (min-height: 668px) and (max-height: 736px) {
+    #upnav-container {
+        transform: translate(0px, 73vh);
+    }
+}
+
+@media (min-height: 654px) and (max-height: 667px) {
+    #upnav-container {
+        transform: translate(0px, 70vh);
+    }
+}
+
+@media (min-height: 641px) and (max-height: 653px) {
+    #upnav-container {
+        transform: translate(0px, 60vh);
+    }
+}
+
+@media (min-height: 569px) and (max-height: 640px) {
+    #upnav-container {
+        transform: translate(0px, 58.5vh);
+    }
+}
+
+@media only screen and (max-height: 568px) {
+    #upnav-container {
+        transform: translate(0px, 54vh);
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    #upnav-container {
+        transform: translate(0px, 65vh);
     }
 }

@@ -18,18 +18,37 @@
             <a class="navlink" href="{% slugurl 'home' %}#about" id="navlink1">about us</a>
             {% comment %} <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2">artists</a> {% endcomment %}
             <a class="navlink" href="{% slugurl 'shop' %}" id="navlink2">shop</a>
-            {% comment %} <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3">collections</a> {% endcomment %}
-            {% comment %} <a class="navlink" href="{% slugurl 'home' %}" id="navlink3">collections</a> {% endcomment %}
+            <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3">collections</a>
         </nav>
         <div id="navig"><a name="navig"></a></div>
         <nav class="nav2 flex-column">
-            <a class="navlink" href="{% slugurl 'home' %}" id="navlink1" style="border-color: #001DB8;">home</a>
-            <a class="navlink" href="{% slugurl 'home' %}#about" id="navlink1">about us</a>
-            {% comment %} <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2">artists</a> {% endcomment %}
-            <a class="navlink" href="{% slugurl 'shop' %}" id="navlink2">shop</a>
-            {% comment %} <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3">collections</a> {% endcomment %}
-            {% comment %} <a class="navlink" href="{% slugurl 'home' %}" id="navlink3">collections</a> {% endcomment %}
-            <div id="upnav-container"><a href="#navig" id="upnav"><div class="upnav"><i class="fa fa-arrow-up" aria-hidden="true"></i><div></a></div>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item navlink active" style="border-color: #001DB8;">
+                        <a href="{% slugurl 'home' %}" id="navlink1">home</a>
+                    </li>
+                    <li class="nav-item navlink">
+                        <a href="{% slugurl 'home' %}#about" id="navlink1">about us</a>
+                    </li>
+                    {% comment %} <li class="nav-item">
+                        <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2">artists</a>
+                    </li> {% endcomment %}
+                    <li class="nav-item navlink">
+                        <a href="{% slugurl 'shop' %}" id="navlink2">shop</a>
+                    </li>
+                    <li class="nav-item navlink">
+                        <a href="{% slugurl 'collections' %}" id="navlink3">collections</a>
+                    </li>
+                </ul>
+ 
+            </div>
+            {% comment %} <a href="#navig" id="upnav"><div class="upnav"><i class="fa fa-arrow-up" aria-hidden="true"></i><div></a> {% endcomment %}
+            {% comment %} <div id="upnav-container"><a href="#navig" id="upnav"><div class="upnav"><i class="fa fa-arrow-up" aria-hidden="true"></i><div></a></div> {% endcomment %}
+        
         </nav>
     </div>
 
@@ -40,15 +59,15 @@
         <h2>{{ page.collection_name }} COLLECTION</h1>
     </div> {% endcomment %}
 
-    <div class="porder-container">
-        <a href="{% slugurl 'shop' %}" id="porder-button">Pre-order now</a>
-    </div>
     <section class="frame1">
         <div id="feature" class="feature">
             <div class="feature-container">
                 <div class="feature-collage">
                     {% image page.section1 max-2000x2000 as S1 %}
                     <img src="{{ S1.url }}" alt="" id="lift">
+                </div>
+                <div class="porder-container">
+                    <a href="{% slugurl 'shop' %}" id="porder-button">Pre-order now</a>
                 </div>
                 <div class="fixed-feature">
                     {% image page.section2 max-2000x2000 as S2 %}
@@ -62,6 +81,9 @@
                 <div class="feature-collage">
                     {% image page.section1_mobile max-2000x2000 as S1 %}
                     <img src="{{ S1.url }}" alt="" id="lift">
+                </div>
+                <div class="porder-container">
+                    <a href="{% slugurl 'shop' %}" id="porder-button">Pre-order now</a>
                 </div>
                 <div class="fixed-feature">
                     {% image page.section2 max-2000x2000 as S2 %}
@@ -96,9 +118,9 @@
             </div> {% endcomment %}
         </div>
         <div class="external-about">
-            <h2>{{ page.invitation }}<br>Find out more</h2>
+            <h2><br>{{ page.invitation }}<br>Find out more</h2>
             <div id='about-button'>
-                <a href=""><p>About Us</p></a>
+                <a href="{{ page.about_link }}"><p>About Us</p></a>
             </div>
         </div>
         <div class="social">

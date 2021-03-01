@@ -9,21 +9,18 @@
 {% block extra_css %}
 
 <style>
-    .card {
-        width: 130px;
-        height: 195px;
-        background: url("/examples/images/card-back.jpg") no-repeat;
-        margin: 50px;
-    }
-    .card:hover {
-        background: url("/examples/images/card-front.jpg") no-repeat;
-    }
 
     #upnav-container{
         z-index:4;
         width: 0;
         transform: translate(0px, 35vh);
     }
+
+    .shop-container-mobile{
+        width: 90vw;
+        margin: 0 auto 8vh;
+    }
+
 </style>
 
 {% endblock %} 
@@ -34,45 +31,287 @@
         <nav class="nav1" id="nav1">
             <a class="navlink" href="{% slugurl 'home' %}" id="navlink1">home</a>
             <a class="navlink" href="{% slugurl 'home' %}#about" id="navlink1">about us</a>
-            <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2">artists</a>
+            {% comment %} <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2">artists</a> {% endcomment %}
             <a class="navlink" href="{% slugurl 'shop' %}" id="navlink2" style="border-color: #001DB8;">shop</a>
-            {% comment %} <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3">collections</a> {% endcomment %}
-            <a class="navlink" href="{% slugurl 'home' %}" id="navlink3">collections</a>
+            <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3">collections</a>
         </nav>
         <div id="navig"><a name="navig"></a></div>
+
         <nav class="nav2 flex-column">
-            <a class="navlink" href="{% slugurl 'home' %}" id="navlink1">home</a>
-            <a class="navlink" href="{% slugurl 'home' %}#about" id="navlink1">about us</a>
-            <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2">artists</a>
-            <a class="navlink" href="{% slugurl 'shop' %}" id="navlink2" style="border-color: #001DB8;">shop</a>
-            {% comment %} <a class="navlink" href="{% slugurl 'collections' %}" id="navlink3">collections</a> {% endcomment %}
-            <a class="navlink" href="{% slugurl 'home' %}" id="navlink3">collections</a>
-            <a href="#navig" id="upnav"><div class="upnav"><i class="fa fa-arrow-up" aria-hidden="true"></i><div></a>
-            <div id="upnav-container"><a href="#navig" id="upnav"><div class="upnav"><i class="fa fa-arrow-up" aria-hidden="true"></i><div></a></div>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars" style="font-size: 6vh;"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item navlink active">
+                        <a href="{% slugurl 'home' %}" id="navlink1">home</a>
+                    </li>
+                    <li class="nav-item navlink">
+                        <a href="{% slugurl 'home' %}#about" id="navlink1">about us</a>
+                    </li>
+                    {% comment %} <li class="nav-item">
+                        <a class="navlink" href="{% slugurl 'artists' %}" id="navlink2">artists</a>
+                    </li> {% endcomment %}
+                    <li class="nav-item navlink" style="border-color: #001DB8;">
+                        <a href="{% slugurl 'shop' %}" id="navlink2">shop</a>
+                    </li>
+                    <li class="nav-item navlink">
+                        <a href="{% slugurl 'collections' %}" id="navlink3">collections</a>
+                    </li>
+                </ul>
+ 
+            </div>
+            {% comment %} <a href="#navig" id="upnav"><div class="upnav"><i class="fa fa-arrow-up" aria-hidden="true"></i><div></a> {% endcomment %}
+            {% comment %} <div id="upnav-container"><a href="#navig" id="upnav"><div class="upnav"><i class="fa fa-arrow-up" aria-hidden="true"></i><div></a></div> {% endcomment %}
+        
         </nav>
     </div>
 
-    <div class="heading">{{ page.collection}}</div>
+    {% for collection in self.collections.all reversed %}
+    <div class="heading" style="background-color: {{ collection.collection.collection_color }};">
+        <span>{{ collection.collection.collection_name}}</span>
+    </div>
+    
+    
+     <div class="shop-container-mobile" style="text-align: center;">
+        <div class="scrollspy-example">
+            {% for artist in collection.collection.artists.all %}
+                {% for product in artist.artist.designs.all %}
+                    <div id="scrollspy-container" style="{% if forloop.last and forloop.parentloop.last %}padding-right: 15vw;{% endif %}">
+                        {% for block in product.designDeets.display %}
+                            {% if forloop.first %}
+
+                                {% comment %} <button type="button" class="product-modal" data-toggle="modal" data-target="#mob{{ product.designDeets.design_name | cut:" " | slice:":3" }}" style="background-color: transparent; position: relative;"></button> {% endcomment %}
+
+                                {% for block in product.designDeets.product %}
+                                    {% if forloop.first %}
+                                        {% image block.value max-1000x1000 as PImg %}
+                                        <a data-toggle="modal" data-backdrop="false" data-target="#mob{{ product.designDeets.design_name | cut:" " | slice:":3" }}"><img id="prod-img" src="{{ PImg.url }}" alt=""></a>
+                                    {% endif %}
+                                {% endfor %}
+
+                                <div class="modal bd-example-modal-xl color-back" id="mob{{ product.designDeets.design_name | cut:" " | slice:":3" }}" tabindex="-1" role="dialog" aria-labelledby="myHugeModalLabel" aria-hidden="true">
+
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                            <button type="button" class="btn" id="modal-exit-button" data-dismiss="modal">
+                                                <i class="fas fa-long-arrow-alt-left"></i> &nbsp Back To Shop
+                                            </button>
+                                            <h1 class="product-element-title">{{ product.designDeets.design_name }}</h1>
+                                            <hr style="width: 100%;">
+                                            <div class="product-element-container1">
+                                                <div class="product-element-assets" id="">
+                                                    <div class="product-display">
+    
+                                                        <div id="carouselExampleIndicatorsinnermobinner{{ product.designDeets.design_name | cut:" " | slice:":3" }}" class="carousel slide" data-backdrop="false" data-interval="false">
+                                                            <div class="carousel-inner" role="listbox">
+                                                                {% for block in product.designDeets.product %}
+                                                                    <div class="carousel-item {% if forloop.parentloop.first and forloop.first %}active{% endif %}">
+                                                                        {% image block.value max-1000x1000 as PImg %}
+                                                                        <img class="prod-img-inner" id="prod-img" src="{{ PImg.url }}" alt="">
+                                                                    </div>
+                                                                {% endfor %}
+                                                            </div>
+                                                            <a class="carousel-control-prev" href="#carouselExampleIndicatorsinnermobinner{{ product.designDeets.design_name | cut:" " | slice:":3" }}" role="button" data-slide="prev" id="carousel-controls-inner" >
+                                                                <div class="carousel-control-prev-icon" aria-hidden="true" ></div>
+                                                                <span class="sr-only">Previous</span>
+                                                            </a>
+                                                            <a class="carousel-control-next" href="#carouselExampleIndicatorsinnermobinner{{ product.designDeets.design_name | cut:" " | slice:":3" }}" role="button" data-slide="next" id="carousel-controls-inner" >
+                                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                                <span class="sr-only">Next</span>
+                                                            </a>
+                                                        </div>
+    
+                                                    </div>
+                                                    <span>
+                                                        <h1>
+                                                            {% if product.designDeets.currency %}
+                                                            {{ product.designDeets.currency }}
+                                                            {% else %}
+                                                            PHP
+                                                            {%endif %}
+                                                            &nbsp
+                                                            {% if product.designDeets.price %}
+                                                            {{ product.designDeets.price }}
+                                                            {% else %}
+                                                            0.00
+                                                            {%endif %}
+                                                        </h1>
+                                                    </span>
+                                                </div>
+                                                {% comment %} <div class="product-element-order" id="" {% if product.designDeets.form_height %}style="height: {{ product.designDeets.form_height }} !important;"{% endif %}>
+                                                    <div class="product-element-order-title">{% if product.designDeets.order_status %}{{ product.designDeets.order_status }}{% else %}ORDER{% endif %}</div>
+                                                    <iframe src="{{ product.designDeets.form_embed_link }}" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                                                </div> {% endcomment %}
+                                                <div class="product-element-order-mobile" id="" {% if product.designDeets.form_height %}style="height: {{ product.designDeets.form_height }} !important;"{% endif %}>
+                                                <a href="{{ product.designDeets.form_embed_link }}" class="btn product-element-order-button-mobile">
+                                                    {% if product.designDeets.order_status %}{{ product.designDeets.order_status }}{% else %}ORDER{% endif %}
+                                                </a>
+                                            </div>
+                                            </div>
+    
+                                            <div class="product-element-container2">
+                                                {% if product.designDeets.description %}
+                                                <hr>
+                                                <br>
+                                                <h1>Product Details</h1>
+                                                <br>
+                                                {{ product.designDeets.description| richtext }}
+                                                <br>
+                                                {% endif %}
+                                                {% if product.designDeets.story %}
+                                                <hr>
+                                                <br>
+                                                <h1>Product Story</h1>
+                                                <br>
+                                                {{ product.designDeets.story | richtext}}
+                                                {% endif %}
+    
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- <div class="modal bd-example-modal-xl color-back" id="mob{{ product.designDeets.design_name | cut:" " | slice:":3" }}" tabindex="-1" data-backdrop="false" role="dialog" aria-labelledby="myHugeModalLabel" aria-hidden="true" style="padding-right: 0px !important;">
+                                    
+    
+                                </div> -->
+
+                            {% endif %}
+                        {% endfor %}
+                        <div id="prod-name" >
+                            <h3>{{ product.designDeets.design_name }}</h3>
+                        </div>
+                        
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+        <hr>
+        <h5 style="font-family: Helvetica">scroll for more <i class="fas fa-long-arrow-alt-right"></i></h5>
+    </div> 
+    
+
     <div class="shop-container">
-        {% for product in self.designs.all %}
-            {% image product.product.product max-1000x1000 as PImg %}
-            {% image product.product.display max-1000x1000 as DImg %}
-            <div class="shop-elements">
-                <div id="order-container" style="background: url('{{ DImg.url }}');">
-                    <a linktype="page" rel="external" href="http://{{ product.product.link }}">
-                        <img id="prod-img" src="{{ PImg.url }}" alt="">
-                    </a>
-                </div>
+        {% comment %} {% for product in collection.collection.artists.artist.designs.all %} {% endcomment %}
+        {% for artist in collection.collection.artists.all %}
+            {% for product in artist.artist.designs.all %}
+            <div class="shop-elements" style="background-color: {{ collection.collection.collection_color }};">
+            
+                {% for block in product.designDeets.product %}
+                    {% if forloop.first %}
+                        {% image block.value max-1000x1000 as PImg %}
+                        <div id="order-container">
+
+                            <button type="button" class="product-modal" data-toggle="modal" data-target="#{{ product.designDeets.design_name | cut:" " | slice:":3" }}" style="background: url('{{ PImg.url }}');"></button>
+
+                            {% for block in product.designDeets.display %}
+                                {% if forloop.first %}
+                                    {% image block.value max-1000x1000 as DImg %}
+                                    <img id="prod-img" src="{{ DImg.url }}" alt="">
+                                {% endif %}
+                            {% endfor %}
+
+                            <div class="modal bd-example-modal-xl color-back" id="{{ product.designDeets.design_name | cut:" " | slice:":3" }}" tabindex="-1" data-backdrop="false" role="dialog" aria-labelledby="myHugeModalLabel" aria-hidden="true" style="padding-right: 0px !important;">
+                                <div class="modal-dialog modal-xl">
+                                    <div class="modal-content">
+                                        <button type="button" class="btn" id="modal-exit-button" data-dismiss="modal" style="position: absolute !important;">
+                                            <i class="fas fa-long-arrow-alt-left"></i> &nbsp Back To Shop
+                                        </button>
+                                        <h1 class="product-element-title">{{ product.designDeets.design_name }}</h1>
+
+                                        <div class="product-element-container1">
+                                            <div class="product-element-assets" id="">
+                                                <div class="product-display">
+
+                                                    <div id="carouselExampleIndicatorsinner{{ product.designDeets.design_name | cut:" " | slice:":3" }}" class="carousel slide" data-interval="false">
+                                                        <div class="carousel-inner" role="listbox">
+                                                            {% for block in product.designDeets.product %}
+                                                                <div class="carousel-item {% if forloop.parentloop.first and forloop.first %}active{% endif %}">
+                                                                    {% image block.value max-1000x1000 as PImg %}
+                                                                    <img class="prod-img-inner" id="prod-img" src="{{ PImg.url }}" alt="">
+                                                                </div>
+                                                            {% endfor %}
+                                                        </div>
+                                                        <a class="carousel-control-prev" href="#carouselExampleIndicatorsinner{{ product.designDeets.design_name | cut:" " | slice:":3" }}" role="button" data-slide="prev" id="carousel-controls-inner" >
+                                                            <div class="carousel-control-prev-icon" aria-hidden="true" ></div>
+                                                            <span class="sr-only">Previous</span>
+                                                        </a>
+                                                        <a class="carousel-control-next" href="#carouselExampleIndicatorsinner{{ product.designDeets.design_name | cut:" " | slice:":3" }}" role="button" data-slide="next" id="carousel-controls-inner" >
+                                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                            <span class="sr-only">Next</span>
+                                                        </a>
+                                                    </div>
+
+                                                </div>
+                                                <span>
+                                                    <h1>
+                                                        {% if product.designDeets.currency %}
+                                                        {{ product.designDeets.currency }}
+                                                        {% else %}
+                                                        PHP
+                                                        {%endif %}
+                                                        &nbsp
+                                                        {% if product.designDeets.price %}
+                                                        {{ product.designDeets.price }}
+                                                        {% else %}
+                                                        0.00
+                                                        {%endif %}
+                                                    </h1>
+                                                </span>
+                                            </div>
+                                            <div class="product-element-order" id="" {% if product.designDeets.form_height %}style="height: {{ product.designDeets.form_height }} !important;"{% endif %}>
+                                                <div class="product-element-order-title">{% if product.designDeets.order_status %}{{ product.designDeets.order_status }}{% else %}ORDER{% endif %}</div>
+                                                <iframe src="{{ product.designDeets.form_embed_link }}" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-element-container2">
+                                            {% if product.designDeets.description %}
+                                            <hr>
+                                            <br>
+                                            <h1>Product Details</h1>
+                                            <br>
+                                            {{ product.designDeets.description| richtext }}
+                                            <br>
+                                            {% endif %}
+                                            {% if product.designDeets.story %}
+                                            <hr>
+                                            <br>
+                                            <h1>Product Story</h1>
+                                            <br>
+                                            {{ product.designDeets.story | richtext}}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
                 <div id="order-box">
-                    <a linktype="page" rel="external" href="http://{{ product.product.link }}" id="order-button">
-                        <p>ORDER</p>
+                    {% comment %} {% if product.designDeets.order_status %}
+                    <a linktype="page" rel="external" href="http://{{ product.designDeets.link }}" id="order-button">
+                        <p>{{ product.designDeets.order_status }}</p>
                     </a>
-                    <div id="prod-name"><h3>{{ product.product.design_name }}</h3></div>
-                    <div id="prod-desc">{{ product.product.description|richtext }}</div>
+                    {% endif %} {% endcomment %}
+                    <div id="prod-name" style="color: white; margin:0;"><h3>{{ product.designDeets.design_name }}</h3></div>
+                    {% comment %} <div id="prod-desc">{{ product.designDeets.description|richtext }}</div> {% endcomment %}
                 </div>
+
             </div>
+
+            
+
+            {% endfor %}
         {% endfor %}
     </div>
+    {% endfor %}
 
 {% endblock %}
 

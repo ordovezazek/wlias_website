@@ -58,12 +58,17 @@
 
                 })
                 $(window).on("scroll load", function() {
-                    if ($(window).scrollTop() < $(".nav2").height()) {
-                        $(".upnav").css({ "background-color": "transparent", "border-color": "transparent"});
-                        $("i").css({ "color": "transparent" });
-                    } else if ($(window).scrollTop() > $(".nav2").height()) {
-                        $(".upnav").css({ "background-color": "black", "border-color": "white"});
-                        $("i").css({ "color": "white" });
+                     if ($(window).scrollTop() < $(".nav1").height()) {
+                        $(".nav2").css({ "background-color": "white" });
+                        $(".nav-item>a").css({ "color": "black" });
+                        $(".navbar-toggler").css({ "color": "black" });
+                        $(".navbar-toggler-icon").css({ "color": "black" });
+                        
+                    } else {
+                        $(".nav2").css({ "background-color": "black" });
+                        $(".nav-item>a").css({ "color": "white" });
+                        $(".navbar-toggler").css({ "color": "white" });
+                        $(".navbar-toggler-icon").css({ "color": "white" });
                     }
 
                 })

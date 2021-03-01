@@ -126,7 +126,7 @@
     height: 651px;
     margin: 135px auto auto;
     padding: 72px 79px 0;
-    border-radius: 50px !important; 
+    border-radius: 50px; 
 }
 
 .modal-content>a {
