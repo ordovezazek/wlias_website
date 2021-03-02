@@ -182,7 +182,7 @@ class Design(models.Model):
     order_status = models.CharField(max_length=1000, blank=True, verbose_name="Order Button Text")
     order_link = models.CharField(max_length=500, blank=True)
     form_embed_link = models.CharField(max_length=500, blank=True)
-    form_height = models.CharField(max_length=500, blank=True)
+    # form_height = models.CharField(max_length=500, blank=True)
 
     display = StreamField([
         ('image', ImageChooserBlock())
@@ -241,7 +241,7 @@ class Design(models.Model):
                     FieldPanel('order_status'),
                     FieldPanel('order_link'),
                     FieldPanel('form_embed_link'),
-                    FieldPanel('form_height'),
+                    # FieldPanel('form_height'),
                 ],
                 heading="Ordering Details",
         ),
