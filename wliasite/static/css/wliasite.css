@@ -950,14 +950,45 @@ nav>a {
 
 .product-element-order{
     width: 50%;
-    height: 49vw;
-    overflow: hidden;
+    /* height: 49vw; */
+    height: fit-content;
+    overflow: auto;
     border: 5px solid black;
+    /* resize: vertical; */
+}
+
+.product-element-order>h6{
+    position: absolute;
+    background-color: transparent;
+    right: 3.2vw;
+    transform: translate(0,6px);
+    font-size: 1vw;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.product-element-order::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .product-element-order{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+.product-element-order>iframe{
+    /* height: 49vw; */
+    overflow-y: auto;
+    margin: 10vh 0 0;
+    resize: vertical;
+    z-index: 8;
+    border-color: transparent !important;
 }
 
 .product-element-order-title{
+    position: absolute;
     text-align: center;
-    width: 100%;
+    width: 46.5%;
     padding: 2vh;
     background-color: black;
     font-size: 2vw;
