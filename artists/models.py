@@ -181,7 +181,7 @@ class Design(models.Model):
     currency = models.CharField(max_length=100, blank=True,)
     order_status = models.CharField(max_length=1000, blank=True, verbose_name="Order Button Text")
     order_link = models.CharField(max_length=500, blank=True)
-    form_embed_link = models.CharField(max_length=500)
+    form_embed_link = models.CharField(max_length=500, blank=True)
     form_height = models.CharField(max_length=500, blank=True)
 
     display = StreamField([
