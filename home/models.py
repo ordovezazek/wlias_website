@@ -1,5 +1,5 @@
 from django.db import models
- 
+
 from wagtail.admin.edit_handlers import (
     FieldPanel,
     FieldRowPanel,
@@ -41,14 +41,14 @@ class HomePage(Page):
         related_name="+",
         verbose_name="Section 1 Mobile (image)"
     )
-    section2 = models.ForeignKey(
-        "wagtailimages.Image",
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
-        related_name="+",
-        verbose_name="Section 2 (image)"
-    )
+    # section2 = models.ForeignKey(
+    #     "wagtailimages.Image",
+    #     on_delete=models.SET_NULL,
+    #     null=True,
+    #     blank=True,
+    #     related_name="+",
+    #     verbose_name="Section 2 (image)"
+    # )
 
     invitation = models.CharField(
         max_length=500,
@@ -62,7 +62,7 @@ class HomePage(Page):
             [
                 ImageChooserPanel("section1"),
                 ImageChooserPanel("section1_mobile"),
-                ImageChooserPanel("section2"),
+                # ImageChooserPanel("section2"),
             ],
             heading="Home Page Display"
         ),
@@ -71,7 +71,7 @@ class HomePage(Page):
         FieldPanel('invitation'),
         FieldPanel('about_link'),
     ]
-        
+
 
         #sets slug to home
     def full_clean(self, *args, **kwargs):

@@ -1,15 +1,15 @@
-/* 
+/*
 
 [FILE MAP]
 
-Mobile Responsiveness 
-Small laptops and smaller 
-Tablets and smaller 
-Extra Responsiveness 
-tablet to 1k 
-big mobile to tablet 
-Large mobile and smaller 
-Medium mobile and smaller 
+Mobile Responsiveness
+Small laptops and smaller
+Tablets and smaller
+Extra Responsiveness
+tablet to 1k
+big mobile to tablet
+Large mobile and smaller
+Medium mobile and smaller
 */
 
 
@@ -344,13 +344,13 @@ Medium mobile and smaller
 
         overflow: hidden;
         margin-bottom: 6vh;
-    } 
-    
+    }
+
     .shop-container-mobile>div{
         display:block;
         width: 100%;
         margin: 0 auto;
-    } 
+    }
 
     .shop-container>a>img {
         width: 60vw;
@@ -381,7 +381,7 @@ Medium mobile and smaller
 
     #scrollspy-container>a>img{
         width: auto;
-        height: 90vw;
+        height: 65vw;
     }
 
     #prod-img:hover {
@@ -420,7 +420,7 @@ Medium mobile and smaller
     #carousel-controls-inner{
         margin: auto 25px;
     }
-    
+
     .product-element-order-mobile{
         width: 100% !important;
         /* height: 49vw; */
@@ -429,7 +429,7 @@ Medium mobile and smaller
         margin-top: -3.5vh;
         /* border: 5px solid black; */
     }
-    
+
     .product-element-order-button-mobile{
         text-align: center;
         width: 100%;
@@ -570,7 +570,7 @@ Medium mobile and smaller
 /* ===large mobile and smaller=== */
 
 @media only screen and (max-width: 500px) {
-    
+
 
     .navbar-toggler{
         padding: .25rem 4vw !important;
@@ -693,7 +693,7 @@ Medium mobile and smaller
     }
     #scrollspy-container>a>img {
         width: auto;
-        height: 135vw;
+        height: 98vw;
     }
 
     #modal-exit-button{
@@ -707,7 +707,7 @@ Medium mobile and smaller
     #prod-name>h3{
         font-size: 7vw;
     }
-    
+
     /* ======/shop====== */
 
     /* ======collection====== */
@@ -716,14 +716,14 @@ Medium mobile and smaller
         padding: 5em 1em;
     }
     .collection-specific-description{
-        
+
     }
 
     .title-text{
         font-size: 7.5vw;
         text-align: center;
     }
-    
+
     .collection-specific-artists{
 
         padding: 0 4vw 8vw;
@@ -738,7 +738,7 @@ Medium mobile and smaller
 
     /* ======/collection====== */
 
-    
+
 }
 
 
