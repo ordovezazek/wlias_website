@@ -65,6 +65,14 @@
         margin-bottom: 6vh;
     }
 }
+@media only screen and (max-width: 500px){
+    #prod-name2>h3{
+        font-size: 5vw;
+    }
+    #prod-name2>h5{
+        font-size: 4vw;
+    }
+}
 
 
 </style>
@@ -285,7 +293,7 @@
                         {% endfor %}
                     
 
-                            <div id="">
+                            <div id="order-box">
                                 <div id="prod-name2"><h2>{{ design.designDeets.design_name }}</h2></div>
                                 <div id="prod-name2" style="margin-top: -0.5vh; "><h5>by {{ artist.artist.artist_name }}</h2></div>
                             </div>

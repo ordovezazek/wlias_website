@@ -176,6 +176,7 @@ nav>a {
     width: 100%;
     height: auto;
     overflow: hidden;
+    word-spacing: 5px;
 }
 
 /* ======landing====== */
