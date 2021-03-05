@@ -23,9 +23,9 @@
 
 </style>
 
-{% endblock %} 
+{% endblock %}
 
-{% block content %} 
+{% block content %}
 
     <div class="head-container">
         <nav class="nav1" id="nav1">
@@ -60,11 +60,11 @@
                         <a href="{% slugurl 'collections' %}" id="navlink3">collections</a>
                     </li>
                 </ul>
- 
+
             </div>
             {% comment %} <a href="#navig" id="upnav"><div class="upnav"><i class="fa fa-arrow-up" aria-hidden="true"></i><div></a> {% endcomment %}
             {% comment %} <div id="upnav-container"><a href="#navig" id="upnav"><div class="upnav"><i class="fa fa-arrow-up" aria-hidden="true"></i><div></a></div> {% endcomment %}
-        
+
         </nav>
     </div>
 
@@ -72,8 +72,8 @@
     <div class="heading" style="background-color: {{ collection.collection.collection_color }};">
         <span>{{ collection.collection.collection_name}}</span>
     </div>
-    
-    
+
+
      <div class="shop-container-mobile" style="text-align: center;">
         <div class="scrollspy-example">
             {% for artist in collection.collection.artists.all %}
@@ -103,7 +103,7 @@
                                             <div class="product-element-container1">
                                                 <div class="product-element-assets" id="">
                                                     <div class="product-display">
-    
+
                                                         <div id="carouselExampleIndicatorsinnermobinner{{ product.designDeets.design_name | cut:" " | slice:":3" }}" class="carousel slide" data-backdrop="false" data-interval="false">
                                                             <div class="carousel-inner" role="listbox">
                                                                 {% for block in product.designDeets.product %}
@@ -122,7 +122,7 @@
                                                                 <span class="sr-only">Next</span>
                                                             </a>
                                                         </div>
-    
+
                                                     </div>
                                                     <span>
                                                         <h1>
@@ -144,13 +144,13 @@
                                                     <div class="product-element-order-title">{% if product.designDeets.order_status %}{{ product.designDeets.order_status }}{% else %}ORDER{% endif %}</div>
                                                     <iframe src="{{ product.designDeets.form_embed_link }}" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
                                                 </div> {% endcomment %}
-                                                <div class="product-element-order-mobile" id="" {% if product.designDeets.form_height %}style="height: {{ product.designDeets.form_height }} !important;"{% endif %}>
+                                                <div class="product-element-order-mobile" id="">
                                                 <a href="{{ product.designDeets.form_embed_link }}" class="btn product-element-order-button-mobile">
                                                     {% if product.designDeets.order_status %}{{ product.designDeets.order_status }}{% else %}ORDER{% endif %}
                                                 </a>
                                             </div>
                                             </div>
-    
+
                                             <div class="product-element-container2">
                                                 {% if product.designDeets.description %}
                                                 <hr>
@@ -167,7 +167,7 @@
                                                 <br>
                                                 {{ product.designDeets.story | richtext}}
                                                 {% endif %}
-    
+
                                             </div>
                                         </div>
                                     </div>
@@ -175,8 +175,8 @@
                                 </div>
 
                                 <!-- <div class="modal bd-example-modal-xl color-back" id="mob{{ product.designDeets.design_name | cut:" " | slice:":3" }}" tabindex="-1" data-backdrop="false" role="dialog" aria-labelledby="myHugeModalLabel" aria-hidden="true" style="padding-right: 0px !important;">
-                                    
-    
+
+
                                 </div> -->
 
                             {% endif %}
@@ -184,22 +184,22 @@
                         <div id="prod-name" >
                             <h3>{{ product.designDeets.design_name }}</h3>
                         </div>
-                        
+
                     </div>
                 {% endfor %}
             {% endfor %}
         </div>
         <hr>
         <h5 style="font-family: Helvetica">scroll for more <i class="fas fa-long-arrow-alt-right"></i></h5>
-    </div> 
-    
+    </div>
+
 
     <div class="shop-container">
         {% comment %} {% for product in collection.collection.artists.artist.designs.all %} {% endcomment %}
         {% for artist in collection.collection.artists.all %}
             {% for product in artist.artist.designs.all %}
             <div class="shop-elements" style="background-color: {{ collection.collection.collection_color }};">
-            
+
                 {% for block in product.designDeets.product %}
                     {% if forloop.first %}
                         {% image block.value max-1000x1000 as PImg %}
@@ -307,7 +307,7 @@
 
             </div>
 
-            
+
 
             {% endfor %}
         {% endfor %}
