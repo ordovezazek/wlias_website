@@ -142,7 +142,7 @@
         <div class="feature-mobile">
             <div id="feature" class="feature-container">
                 <div class="feature-collage">
-                    {% image collection.mobile_display max-2000x2000 as CSD %}
+                    {% image self.collection.mobile_display max-2000x2000 as CSD %}
                     <img src="{{ CSD.url }}" alt="">
                 </div>
             </div>
