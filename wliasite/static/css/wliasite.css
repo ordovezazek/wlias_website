@@ -11,7 +11,7 @@
 }
 
 
-/* 
+/*
 
 [FILE MAP]
 
@@ -177,6 +177,7 @@ nav>a {
     height: auto;
     overflow: hidden;
     word-spacing: 5px;
+    text-align: justify;
 }
 
 /* ======landing====== */
@@ -201,7 +202,7 @@ nav>a {
     align-content: center;
     font-size: 190%;
     z-index: -1;
-    /* visibility: hidden; 
+    /* visibility: hidden;
 } */
 
 .logo {
@@ -279,7 +280,7 @@ nav>a {
     text-decoration: underline;
     color: rgb(157 210 250);
     background-color: white;
-    
+
 }
 
 .feature-collage {
@@ -400,7 +401,7 @@ nav>a {
 }
 
 .adI{
-    
+
 }
 
 .adII{
@@ -424,10 +425,10 @@ nav>a {
 }
 
 .external-about>h2 {
-    
+
     font-size: 2.8vw;
     margin-bottom: 30px;
-    
+
 }
 
 #about-button>a {
@@ -571,7 +572,7 @@ nav>a {
     border: 0 !important;
     border-radius: 0 !important;
     overflow-y: scroll;
-    
+
 }
 
 #modal-exit-button{
@@ -825,7 +826,7 @@ nav>a {
     z-index: 5;
     background-color: black;
     opacity: 1 !important;
-    width: fit-content; 
+    width: fit-content;
     height: fit-content;
     padding: 3vw;
     border-radius: 360px;
@@ -848,7 +849,7 @@ nav>a {
     z-index: 3;
     background-color: gray;
     opacity: 1 !important;
-    width: fit-content; 
+    width: fit-content;
     height: fit-content;
     padding: 3vw;
     border-radius: 360px;
@@ -918,7 +919,7 @@ nav>a {
 .product-element-assets{
     width: 50%;
     height: fit-content;
-    
+
     /* overflow: hidden; */
 }
 
@@ -970,7 +971,7 @@ nav>a {
 .product-element-order::-webkit-scrollbar {
     display: none;
   }
-  
+
   /* Hide scrollbar for IE, Edge and Firefox */
   .product-element-order{
     -ms-overflow-style: none;  /* IE and Edge */
@@ -1075,7 +1076,7 @@ nav>a {
 
 .collections-container>a:hover{
     text-decoration: none;
-    
+
 }
 
 .collections-container>a:hover .collection-cover>img{
